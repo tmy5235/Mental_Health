@@ -2,20 +2,24 @@
 
 IST 402 · Design milestone · October 15, 2026
 
-**Publication pending:** the design is complete locally, but this report needs the repository URL and accessible document links before upload.
+The design and supporting evidence are published. Repository and report-document links were verified accessible without signing in.
 
 ## Project access
 
-Repository URL: **PENDING_REPOSITORY_URL**
+Repository URL: [Mental_Health](https://github.com/tmy5235/Mental_Health).
 
-Assessed design commit: `58d92cb028d3fe52f3bf452bad1a810253548e20`
+Published branch: `codex/assignment3-part1`.
 
-- [Design, screen sketches, flow, architecture, and research mapping](docs/design-pipeline.md)
-- [Document verification and evidence limits](docs/verification.md)
-- [Curated process evidence and revised approaches](docs/evidence.md)
-- [Project overview and completed design guidelines](README.md)
-- [Coding-agent instructions](AGENTS.md)
-- [AI-use disclosure](AI-USE.md)
+Assessed design commit: [`58d92cb028d3fe52f3bf452bad1a810253548e20`](https://github.com/tmy5235/Mental_Health/commit/58d92cb028d3fe52f3bf452bad1a810253548e20).
+
+Document links below use publication-evidence snapshot `802bafa`; the assessed design is unchanged from `58d92cb`.
+
+- [Design, screen sketches, flow, architecture, and research mapping](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/docs/design-pipeline.md)
+- [Document verification and evidence limits](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/docs/verification.md)
+- [Curated process evidence and revised approaches](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/docs/evidence.md)
+- [Project overview and completed design guidelines](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/README.md)
+- [Coding-agent instructions](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/AGENTS.md)
+- [AI-use disclosure](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/AI-USE.md)
 
 ## Purpose and proposed experience
 

@@ -18,13 +18,18 @@ placeholders, and file contents. See `docs/verification.md`; do not confuse thes
 with app tests. Canvas redirected to sign-in. Exact deadline/additional page
 instructions and submission remain unverified.
 
-## Remaining submission work
+## Publication complete; ready for student upload
 
-The GitHub destination was requested from the student. No repository remote was
-configured at the beginning of this turn. Finish publication, record the assessed
-commit, and replace report placeholders with verified accessible links. Inspect
-`git remote -v`, `git log`, and `report.md` for the latest publication status before
-acting. Do not guess a destination or claim the Canvas upload happened.
+Origin is `https://github.com/tmy5235/Mental_Health.git`. Published branch:
+`codex/assignment3-part1`. The assessed design is `58d92cb`; report links use the
+publication-evidence snapshot `802bafa2cf4e503ccfc174d52661a5bfa26b19cc` with the
+same design and updated verification/disclosure. Repository, assessed commit,
+and six document links were checked anonymously and returned HTTP 200.
+
+The root `report.md` has no submission placeholders and is ready for the student
+to review and upload to Canvas. No recording or Figma artifact is required by the
+supplied Part 1 materials. No Canvas upload has occurred; the separate submission
+page required sign-in, so the student should check any additional instructions.
 
 ## Later implementation
 
