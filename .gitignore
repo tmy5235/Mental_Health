@@ -1,0 +1,17 @@
+# Local secrets and dependencies
+.env
+.env.*
+!.env.example
+backend/.venv/
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.DS_Store
+# Runtime data, including journals and WAL files
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
