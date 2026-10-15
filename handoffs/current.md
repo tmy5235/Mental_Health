@@ -2,6 +2,8 @@
 
 Updated October 15, 2026. Branch: `codex/assignment3-part1`.
 
+Assessed design checkpoint: `58d92cb028d3fe52f3bf452bad1a810253548e20`. Subsequent report-only publication metadata does not change the assessed design.
+
 ## Current state
 
 The student requested finalizing the Part 1 submission. The maintained design is

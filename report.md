@@ -2,11 +2,13 @@
 
 IST 402 · Design milestone · October 15, 2026
 
+**Publication pending:** the design is complete locally, but this report needs the repository URL and accessible document links before upload.
+
 ## Project access
 
 Repository URL: **PENDING_REPOSITORY_URL**
 
-Assessed design commit: **PENDING_ASSESSED_COMMIT**
+Assessed design commit: `58d92cb028d3fe52f3bf452bad1a810253548e20`
 
 - [Design, screen sketches, flow, architecture, and research mapping](docs/design-pipeline.md)
 - [Document verification and evidence limits](docs/verification.md)
