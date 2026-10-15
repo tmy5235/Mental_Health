@@ -2,8 +2,8 @@
 
 Updated October 15, 2026. Branch: `codex/assignment3-part1`.
 
-The earlier assessed design `58d92cb` is superseded by the user-state ideation
-revision. Read report.md for the updated assessed commit after publication.
+Current assessed design: `f7b91254907a3eb18b22dc7d58b82a89960c63cb`.
+This user-state ideation revision supersedes `58d92cb`.
 
 ## Current state
 
@@ -28,10 +28,11 @@ and proposed missing/conflicting-information checks. No assessment tool or datas
 is adopted. Original resources and the separate graded activity were not reviewed.
 
 Origin is `https://github.com/tmy5235/Mental_Health.git`; branch is
-`codex/assignment3-part1`. Publish a new assessed design snapshot and repin the
-report links; check report.md, the remote, and docs/publication-links.json for
-actual completion. No Canvas submission has been performed. The student must use
-the updated report rather than the earlier version that omitted this activity.
+`codex/assignment3-part1`. The revised design is published and report.md is pinned
+to it. All eight exact report links returned HTTP 200 anonymously; see
+docs/publication-links.json. The updated report is ready for student upload. No
+Canvas submission has been performed. Use the updated report rather than the
+earlier version that omitted this activity.
 
 ## Later implementation
 

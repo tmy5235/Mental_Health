@@ -10,16 +10,16 @@ Repository URL: [Mental_Health](https://github.com/tmy5235/Mental_Health).
 
 Published branch: `codex/assignment3-part1`.
 
-Assessed design commit: [`58d92cb028d3fe52f3bf452bad1a810253548e20`](https://github.com/tmy5235/Mental_Health/commit/58d92cb028d3fe52f3bf452bad1a810253548e20).
+Assessed design commit: [`f7b91254907a3eb18b22dc7d58b82a89960c63cb`](https://github.com/tmy5235/Mental_Health/commit/f7b91254907a3eb18b22dc7d58b82a89960c63cb).
 
-Document links below use publication-evidence snapshot `802bafa`; the assessed design is unchanged from `58d92cb`.
+Document links below identify the revised design snapshot `f7b9125`, which includes the user-state ideation activity.
 
-- [Design, screen sketches, flow, architecture, and research mapping](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/docs/design-pipeline.md)
-- [Document verification and evidence limits](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/docs/verification.md)
-- [Curated process evidence and revised approaches](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/docs/evidence.md)
-- [Project overview and completed design guidelines](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/README.md)
-- [Coding-agent instructions](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/AGENTS.md)
-- [AI-use disclosure](https://github.com/tmy5235/Mental_Health/blob/802bafa2cf4e503ccfc174d52661a5bfa26b19cc/AI-USE.md)
+- [Design, screen sketches, flow, architecture, and research mapping](https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/docs/design-pipeline.md)
+- [Document verification and evidence limits](https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/docs/verification.md)
+- [Curated process evidence and revised approaches](https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/docs/evidence.md)
+- [Project overview and completed design guidelines](https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/README.md)
+- [Coding-agent instructions](https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/AGENTS.md)
+- [AI-use disclosure](https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/AI-USE.md)
 
 ## Purpose and proposed experience
 

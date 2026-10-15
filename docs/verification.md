@@ -60,3 +60,12 @@ tradeoff. Source notes attribute study claims to the supplied activity and do no
 claim direct reading, dataset inspection, or completion of a separate graded
 activity. Local Markdown links and all ten R/D mappings were rechecked. These
 are document checks only; the new fictional scenarios remain unexecuted.
+
+## Revised publication verified
+
+The user-state ideation design is published at
+`f7b91254907a3eb18b22dc7d58b82a89960c63cb`, superseding the earlier design checkpoint.
+Ran `python3 /tmp/verify_mental_health_report.py` to extract and check every exact
+URL in the revised report. The repository, new assessed commit, and six pinned
+documents all returned HTTP 200 without authentication. The recorded JSON now
+contains these updated results. This confirms accessibility, not Canvas upload.

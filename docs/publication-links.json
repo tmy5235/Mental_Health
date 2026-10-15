@@ -1,7 +1,7 @@
 {
   "checked_date": "2026-10-15",
   "authentication": "none; curl -q without cookies or authorization headers",
-  "assessed_design_commit": "58d92cb028d3fe52f3bf452bad1a810253548e20",
+  "assessed_design_commit": "f7b91254907a3eb18b22dc7d58b82a89960c63cb",
   "results": [
     {
       "url": "https://github.com/tmy5235/Mental_Health",
@@ -9,37 +9,37 @@
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/commit/58d92cb028d3fe52f3bf452bad1a810253548e20",
+      "url": "https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/AGENTS.md",
       "http_status": "200",
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/blob/58d92cb028d3fe52f3bf452bad1a810253548e20/docs/design-pipeline.md",
+      "url": "https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/AI-USE.md",
       "http_status": "200",
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/blob/58d92cb028d3fe52f3bf452bad1a810253548e20/docs/verification.md",
+      "url": "https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/README.md",
       "http_status": "200",
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/blob/58d92cb028d3fe52f3bf452bad1a810253548e20/docs/evidence.md",
+      "url": "https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/docs/design-pipeline.md",
       "http_status": "200",
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/blob/58d92cb028d3fe52f3bf452bad1a810253548e20/README.md",
+      "url": "https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/docs/evidence.md",
       "http_status": "200",
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/blob/58d92cb028d3fe52f3bf452bad1a810253548e20/AGENTS.md",
+      "url": "https://github.com/tmy5235/Mental_Health/blob/f7b91254907a3eb18b22dc7d58b82a89960c63cb/docs/verification.md",
       "http_status": "200",
       "curl_exit": 0
     },
     {
-      "url": "https://github.com/tmy5235/Mental_Health/blob/58d92cb028d3fe52f3bf452bad1a810253548e20/AI-USE.md",
+      "url": "https://github.com/tmy5235/Mental_Health/commit/f7b91254907a3eb18b22dc7d58b82a89960c63cb",
       "http_status": "200",
       "curl_exit": 0
     }
