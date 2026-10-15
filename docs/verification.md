@@ -28,9 +28,17 @@ the available browser. No additional page-specific instructions or exact deadlin
 were verified. Requirements were checked against the three supplied course texts
 and the research-table image. No Canvas upload has been performed.
 
-Repository publication and anonymous link checks are not established by local
-file checks. The final report identifies the assessed commit and records the
-publication result when it is verified. Until then, publication is pending.
+Published the assessed design to [Mental_Health](https://github.com/tmy5235/Mental_Health)
+on branch `codex/assignment3-part1`. Assessed design commit:
+`58d92cb028d3fe52f3bf452bad1a810253548e20`.
+
+Ran `python3 /tmp/check_mental_health_links.py` using concurrent anonymous
+`curl -q --location --max-time 25` checks, without cookies or authorization
+headers. The repository, assessed commit, and six linked documents all returned
+HTTP 200. [Recorded results](publication-links.json) contain the checked URLs
+and statuses. This establishes public document access at check time, not Canvas
+submission or application behavior. Later publication-only commits preserve the
+assessed design and update report links and evidence.
 
 ## Later checks — not executed
 

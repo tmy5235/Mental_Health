@@ -17,9 +17,9 @@ to sign-in.
 
 ## Publication and submission
 
-- [ ] Repository destination supplied and assessed version published.
+- [x] Repository destination supplied and assessed version published.
 - [ ] Assessed commit and accessible links inserted in report.md.
-- [ ] External access checked.
+- [x] External access checked: repository, commit, and six document links returned HTTP 200 without authentication.
 - [ ] Student reviews the final report and can explain the design.
 - [ ] Student checks any additional Canvas page instructions and uploads report.md.
 

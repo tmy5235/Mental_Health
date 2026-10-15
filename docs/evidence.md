@@ -39,3 +39,11 @@ Only curated coursework prompts and design decisions are included. No credential
 - The supplied Figma activity explicitly adds no new submission/grading requirement. Used sketches and a flow diagram for Part 1; no Figma capture or working prototype was claimed.
 - Tried the separate Canvas Part 1 page; the available browser redirected to Penn State sign-in. Requirements were checked against supplied materials, not a verified signed-in page.
 - Document and publication checks are recorded in verification.md. No live application/model results are claimed.
+
+## 2026-10-15 — Repository publication
+
+- Student supplied `https://github.com/tmy5235/Mental_Health.git` as the destination.
+- Checked the remote before writing; it had no advertised refs. Connected it as origin and pushed `codex/assignment3-part1` without overwriting existing history.
+- Assessed design checkpoint: `58d92cb028d3fe52f3bf452bad1a810253548e20`.
+- Anonymous HTTP checks returned 200 for the repository, assessed commit, and all six report-document links. See [publication results](publication-links.json).
+- Replaced report placeholders with accessible URLs. Publication metadata does not add application code or change the assessed design. No Canvas submission was performed.

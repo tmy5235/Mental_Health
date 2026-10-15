@@ -23,3 +23,7 @@ Canvas submission page reached sign-in; no additional instructions or submission
 were verified. No Figma tools, clinical datasets, app-provider calls, or generated
 application code were used. The model identifier disclosure above remains the
 available information; no more specific version is invented.
+
+Publication used local Git commands and anonymous HTTP checks to publish the
+student-specified repository and verify report-document access. No Canvas upload
+was performed. Publication evidence is stored in docs/publication-links.json.
