@@ -18,7 +18,7 @@ A separate fictional history question demonstrates the model's contribution: “
 
 ### Welcome
 
-Show a brief coursework disclosure, a concise description of the exercise, and a prominent Start breathing button. No mood survey or chat is required. Secondary actions open optional chat, history, and display preferences. Crisis support is always labeled and visible. The disclosure explains that the prototype is not therapy and nobody is monitoring activity.
+Show a brief coursework disclosure, a concise description of the exercise, and a prominent Start breathing button. No mood survey or chat is required. Secondary actions open optional chat, history, and display preferences. A Show fewer options / Show more options control lets the user choose interface complexity; compact access to optional features remains available. Crisis support is always labeled and visible. The disclosure explains that the prototype is not therapy and nobody is monitoring activity.
 
 ### Breathing
 
@@ -73,6 +73,47 @@ Source: the instructor's assignment text and R1–R4 / D1–D6 table supplied by
 | D5: personalization without configuration burden | Remember display choices made during normal use; no mandatory settings questionnaire. | Saving choices still creates data and may surprise users; label the remembered setting and provide reset. |
 | D6: low-stimulus, nonjudgmental language | Use muted colors, plain wording, restrained pacing motion, and a text alternative. | Motion can help pacing but may distract; compare both modes in fictional walkthroughs. |
 
+## Understanding user state: ideation and selected approach
+
+The supplied **[Ideation] Understanding User State: Questionnaires and Clicking Behavior** activity presents possibilities rather than new Assignment 3 requirements. Its central distinction informs this design: a self-report, an observed interaction, and an interpretation are different information. None gives the application direct access to a person's mental state.
+
+### Alternatives considered
+
+| Approach | Information it could provide | Effort, limits, and decision |
+| --- | --- | --- |
+| Full state-anxiety questionnaire | The person's answers about a specified time frame | The activity describes a 20-item STAI state scale. This adds substantial effort before a short skill and requires the authorized version, scoring, and administration permissions. Not selected for this prototype. No instrument items or scores are reproduced. |
+| Brief optional prototype check-in | The person's own account of how they feel right now | Could support reflection with less effort, but adds collection, interpretation, and privacy decisions. Considered and deferred; the current interface includes no check-in or mood score. If added later, use original wording, label it a prototype check-in rather than STAI, specify the time frame, and make skipping possible. A before/after change would not establish causation. |
+| Click timing or a pointing task | Performance on a specific interaction under specific conditions | Adds a task and ambiguous data. Device, target size/distance, practice, fatigue, and motor differences can affect results. Not selected; there is no click-speed tracking, pointing task, or inferred anxiety score. |
+| Explicit presentation choice — selected | The user's request for fewer visible options or a particular pacing display | Directly supports an interface change without asking the app to infer an emotion. Lower assessment burden, but no emotional-state estimate or automatic adaptation. |
+
+The activity's summary of Macaulay (2004) reports no statistically significant correlation between its mouse measure and self-reported state anxiety. Its modified mouse measured the physical speed of button travel, not ordinary browser timestamps, cursor speed, or target-selection time. We therefore cannot reproduce that measure by logging clicks or use the study to justify a browser-based anxiety detector. This is a summary of the supplied class activity; the original paper and questionnaire were not separately reviewed here.
+
+### What the app knows, and what it does not
+
+| Information type | Fictional example | Permitted use and limit |
+| --- | --- | --- |
+| Self-report | Alex types “I feel overwhelmed right now” in optional chat | Preserve it as Alex's statement at that time, not a diagnosis, independently measured score, or verified state. Do not automatically infer a layout preference from it. No structured questionnaire is collected. |
+| Observed interaction | A session ended after 20 active seconds; Alex selected text pacing | Show the recorded event and remember the explicit display choice. It does not establish distress, avoidance, improvement, or why the session ended. |
+| Interpretation | “Alex stopped because anxiety increased” | Unsupported by the stored facts. Do not save or present it as a conclusion, use it to route Alex, or turn it into a model-generated emotional profile. |
+
+No separate inferred-state field is planned. The model may retrieve factual records and attributed statements but must keep their meanings distinct. Session duration and display settings are interaction records, not hidden mental-health assessments.
+
+### Selected behavior: Show fewer options
+
+On Welcome, add **Show fewer options**. It collapses optional chat/history previews and extended explanation, while retaining Start breathing, concise duration/stop information, a compact More options control, and Crisis support. **Show more options** restores the expanded view. More options still provides access to chat, history, and display settings. During breathing, there is already one primary instruction; pause, exit, and support never disappear.
+
+Remember only the explicitly selected simplified-view setting. Let the user change or reset it at any time; never hide or change controls because of click rate, a message classification, or an early exit. The button supplies the user's presentation preference, not a claim that distress was detected. This operationalizes D1 while limiting effort (D3), remembering useful choices (D5), and preserving user control (R4).
+
+If no chat, history, or preference is available, use the ordinary welcome defaults and keep the skill and support accessible. If a fictional self-report and behavior appear inconsistent—for example, Alex reports feeling calm but repeatedly pauses—show only the attributed statement and recorded events when relevant. Do not resolve the difference by declaring either a hidden emotion or an unreliable self-report. A changed explicit preference takes precedence over the remembered setting; it does not change the person's recorded words.
+
+### History and model resources
+
+The activity's summary of Austin et al. (2020) suggests that accessible skills, findable notes, and controllable interface complexity are useful design concerns. Its reported usefulness and participant experiences do not establish clinical outcomes, and its clinical population differs from fictional college student Alex. This supports making saved history easy to find without claiming the app improves treatment or mood.
+
+The activity distinguishes research models, intent/response examples, and paraphrased or synthetic conversation datasets. We are not adopting a specialized mental-health model, importing a dataset, or training a model. The proposed model remains a navigator of reviewed skill material and factual saved history. Before any later reuse, inspect original documentation, provenance, population fit, generation method, and applicable access/license terms; a convincing answer or anonymized record does not establish clinical suitability. No external dataset examples or demonstrated therapy session were inspected for this revision.
+
+The tradeoff is deliberate: this version gains a short, transparent route into the skill and gives up automated state estimation and structured mood reflection. These are design choices, not demonstrated usability or effectiveness findings.
+
 ## Entry alternatives and selected direction
 
 **Alternative A — conversation first:** show a longer introduction, ask about the fictional user's state, and request display preferences before starting. This could provide more context, but creates reading, disclosure, configuration, and model-waiting requirements.
@@ -94,6 +135,7 @@ You may stop at any point.       Cycle 1 of 6
 [Ask about exercise]            [Use text display]              Exercise ended
 [View history]                                                  Same navigation options
 [Display options]
+[Show fewer options]
 ```
 
 The sketch shows a static inhale state. Code must alternate four-second inhales and six-second exhales. Text mode replaces the circle with the phase/count; it must preserve pacing. Saved/failed states are disclosed accurately rather than assumed from reaching the completion screen.
@@ -170,6 +212,9 @@ No checks below have been executed. They are expected behaviors to guide impleme
 | RAG returns no matching history | State that no matching record exists; do not invent a prior session. |
 | Model proposes a write or out-of-scope query | Reject it before execution; preserve existing records and support access. |
 | Refresh and restart after saving a fictional conversation | Preserve message order and IDs without duplicates; compare SQLite, API, and UI. |
+| No check-in, chat, history, or preference exists | Start and crisis access remain available; no state estimate is created. |
+| Alex says “calm” in fictional chat but pauses repeatedly | Keep the statement and pause events distinct; do not infer anxiety or automatically change the interface. |
+| Choose Show fewer options, then change it back | Preserve skill/support access, restore optional content on request, and save only the explicit preference. |
 | Model request fails | Explain the failure; exercise and crisis support still work. |
 | Database save fails | Ending remains possible; do not claim the session was saved. |
 | Reopen after choosing text mode | Restore text mode with an easy way to change/reset it. |
@@ -182,6 +227,7 @@ Three proposed cross-case behavior checks: crisis access survives model failure;
 
 - Whether later fictional walkthroughs reveal unclear pacing, control labels, or history presentation.
 - Which model/provider to use and what relevant context to include within its cost and length limits.
+- Whether a future optional, original-worded check-in would be worth its additional effort and data collection; it is outside the selected version.
 - Intended region and verified wording for crisis-support resources.
 - Exact handling of reloads, keyboard focus, background-tab timing, and deletion.
 - Provider limits, exact SQL validation strategy, and evidence to test rejected or out-of-scope queries.
@@ -190,10 +236,12 @@ These are design questions, not evidence of working behavior.
 
 ## Sources and milestone scope
 
-The student supplied the assignment overview and its research table on October 13, and the startup and Figma activities on October 15. Sources:
+The student supplied the assignment overview and its research table on October 13, and the startup, Figma, and user-state ideation activities on October 15. Sources:
 
 - [Assignment 3 overview](https://psu.instructure.com/courses/2484533/pages/assignment-3-overview-mental-health-skills-application): Part 1 design requirements, R/D findings, timing, and fictional-testing boundaries. Findings are paraphrased above; no separate clinical dataset is required.
 - [Project startup activity](https://psu.instructure.com/courses/2484533/pages/in-class-activity-set-up-the-assignment-3-project): stack, folders, documentation, and SQL-based RAG workflow.
 - [Figma and MCP activity](https://psu.instructure.com/courses/2484533/pages/in-class-activity-introduction-to-figma-and-mcp): design alternatives and implementation comparison; explicitly adds no new submission or grading requirement.
+
+Additional supplied source: **[Ideation] Understanding User State: Questionnaires and Clicking Behavior**, received October 15. Its pasted text did not retain the underlying reading URLs. The discussion above attributes research summaries to this activity rather than claiming direct review of the papers, questionnaire, models, datasets, or video. It points to a separate **Graded In-class Activity 3: Exploring Directions for Assignment 3**; those group/submission instructions were not supplied, so this incorporation does not claim completion of that separate graded activity.
 
 These course pages may require institutional access. This document is based on the supplied copies. The separate Part 1 submission page redirected to sign-in when checked; no additional page-specific instructions were verified. For this milestone, the flow and sketches above provide the design artifact. A running app, Figma file, and recording have not been produced.

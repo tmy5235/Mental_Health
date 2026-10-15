@@ -2,7 +2,8 @@
 
 Updated October 15, 2026. Branch: `codex/assignment3-part1`.
 
-Assessed design checkpoint: `58d92cb028d3fe52f3bf452bad1a810253548e20`. Subsequent report-only publication metadata does not change the assessed design.
+The earlier assessed design `58d92cb` is superseded by the user-state ideation
+revision. Read report.md for the updated assessed commit after publication.
 
 ## Current state
 
@@ -18,18 +19,19 @@ placeholders, and file contents. See `docs/verification.md`; do not confuse thes
 with app tests. Canvas redirected to sign-in. Exact deadline/additional page
 instructions and submission remain unverified.
 
-## Publication complete; ready for student upload
+## User-state ideation revision and publication
 
-Origin is `https://github.com/tmy5235/Mental_Health.git`. Published branch:
-`codex/assignment3-part1`. The assessed design is `58d92cb`; report links use the
-publication-evidence snapshot `802bafa2cf4e503ccfc174d52661a5bfa26b19cc` with the
-same design and updated verification/disclosure. Repository, assessed commit,
-and six document links were checked anonymously and returned HTTP 200.
+The student requested including the supplied user-state ideation activity. Added
+alternative assessment approaches and their limits, explicit Show fewer options /
+Show more options behavior, separation of self-report/observations/interpretation,
+and proposed missing/conflicting-information checks. No assessment tool or dataset
+is adopted. Original resources and the separate graded activity were not reviewed.
 
-The root `report.md` has no submission placeholders and is ready for the student
-to review and upload to Canvas. No recording or Figma artifact is required by the
-supplied Part 1 materials. No Canvas upload has occurred; the separate submission
-page required sign-in, so the student should check any additional instructions.
+Origin is `https://github.com/tmy5235/Mental_Health.git`; branch is
+`codex/assignment3-part1`. Publish a new assessed design snapshot and repin the
+report links; check report.md, the remote, and docs/publication-links.json for
+actual completion. No Canvas submission has been performed. The student must use
+the updated report rather than the earlier version that omitted this activity.
 
 ## Later implementation
 

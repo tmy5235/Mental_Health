@@ -157,6 +157,7 @@ inspection method; do not require a particular viewer or install one silently.
 - Use saved preferences transparently. Let the person skip, reject, or change
   suggestions. Keep self-report, observed behavior, and interpretation distinct;
   do not infer a diagnosis or emotional state from clicks or a custom check-in.
+- Preserve the ideation decision: no questionnaire, pointing task, click-speed tracking, or inferred-state score in the selected version. Keep self-reported chat statements attributed, session events factual, and presentation changes explicitly user-controlled. Missing or conflicting signals must not gate skills or support.
 - Keep the coursework label accurate. Do not invent therapeutic advice, claim
   clinical effectiveness, imply monitoring, or deploy this as a support service.
 

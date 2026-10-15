@@ -59,6 +59,28 @@ must remain visible and resettable. One skill makes the implementation manageabl
 while limiting technique choice. Session completion is never treated as evidence
 of improvement.
 
+## User-state ideation
+
+The supplied **Understanding User State: Questionnaires and Clicking Behavior**
+activity informed a comparison of a full questionnaire, an optional brief check-in,
+interaction measurements, and explicit display choices. We selected **Show fewer
+options / Show more options**, keeping Start, optional-feature access, and crisis
+information reachable. This supports D1, D3, D5, and R4 without claiming to detect
+distress. The current scope excludes questionnaires, pointing tasks, click-speed
+tracking, and anxiety scores; the tradeoff is less structured reflection and no
+automated state estimate.
+
+Self-reported chat content remains attributed to the user; session events are
+observations, not explanations of feelings. If no signal exists, the normal flow
+still works. If Alex reports feeling calm but pauses repeatedly, the app must not
+infer anxiety or change the layout automatically. The activity's mouse-study
+summary does not validate browser clicks as an anxiety measure, and its DBT-app
+summary concerns experience/usefulness rather than established treatment outcomes.
+The detailed design records these limits and future fictional checks. The original
+papers, STAI form, datasets, and video were not independently inspected; no clinical
+instrument or dataset was adopted. The activity describes ideation possibilities,
+not new Assignment 3 requirements.
+
 ## Model, application control, and data
 
 Optional chat combines reviewed skill information with stored context using the
@@ -85,8 +107,10 @@ resource content will be verified before implementation.
 Completed the project structure, README guidelines, coding-agent instructions,
 design specification, sketches/flow, research mapping, proposed architecture/data
 model, failure plan, verification plan, AI disclosure, and curated evidence.
-The process log records two revisions: removing required preference setup and
-replacing the earlier retrieval proposal with class-required SQL RAG.
+The process log records revisions including: removing required preference setup and
+replacing the earlier retrieval proposal with class-required SQL RAG. The new
+ideation notes also make the limits of state inference and the rationale for
+explicit presentation controls concrete.
 
 Part 1 verification covers document links, folder structure, research coverage,
 consistent design requirements, and publication status as recorded in the linked

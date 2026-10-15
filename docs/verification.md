@@ -25,11 +25,11 @@ dependencies, and private source material.
 
 The separate Canvas Part 1 submission page redirected to Penn State sign-in in
 the available browser. No additional page-specific instructions or exact deadline
-were verified. Requirements were checked against the three supplied course texts
+were verified. Requirements were checked against the supplied course texts, including the user-state ideation activity
 and the research-table image. No Canvas upload has been performed.
 
 Published the assessed design to [Mental_Health](https://github.com/tmy5235/Mental_Health)
-on branch `codex/assignment3-part1`. Assessed design commit:
+on branch `codex/assignment3-part1`. The initial, now superseded design checkpoint was:
 `58d92cb028d3fe52f3bf452bad1a810253548e20`.
 
 Ran `python3 /tmp/check_mental_health_links.py` using concurrent anonymous
@@ -37,8 +37,10 @@ Ran `python3 /tmp/check_mental_health_links.py` using concurrent anonymous
 headers. The repository, assessed commit, and six linked documents all returned
 HTTP 200. [Recorded results](publication-links.json) contain the checked URLs
 and statuses. This establishes public document access at check time, not Canvas
-submission or application behavior. Later publication-only commits preserve the
-assessed design and update report links and evidence.
+submission or application behavior. The user-state ideation revision changes the design and supersedes that initial
+checkpoint. The current assessed commit is identified in report.md. Link evidence
+is refreshed after publication; earlier access checks do not prove access to a
+new snapshot.
 
 ## Later checks — not executed
 
@@ -47,3 +49,14 @@ late model responses, crisis access after failure, SQLite persistence/restart,
 scoped retrieval, rejected SQL, empty results, and duplicate prevention all need
 implementation and observed results. The fictional cases in the design document
 are a test plan. They are not passed tests.
+
+## User-state ideation document review
+
+Checked that README and design-pipeline.md consistently select explicit display
+controls, exclude questionnaires/click-based state inference from the current
+scope, distinguish self-report from interaction records and interpretation, and
+specify missing/conflicting-information behavior. The report summarizes the
+tradeoff. Source notes attribute study claims to the supplied activity and do not
+claim direct reading, dataset inspection, or completion of a separate graded
+activity. Local Markdown links and all ten R/D mappings were rechecked. These
+are document checks only; the new fictional scenarios remain unexecuted.

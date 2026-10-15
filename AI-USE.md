@@ -27,3 +27,12 @@ available information; no more specific version is invented.
 Publication used local Git commands and anonymous HTTP checks to publish the
 student-specified repository and verify report-document access. No Canvas upload
 was performed. Publication evidence is stored in docs/publication-links.json.
+
+## User-state ideation revision, October 15, 2026
+
+Codex used the newly supplied ideation activity to draft comparisons and rationale
+for explicit presentation controls, distinguish self-report/observations/inference,
+and add proposed fictional cases. It updated the design, report, and project notes.
+It did not independently read the referenced research papers or inspect/download
+questionnaires, datasets, models, or videos, and did not run participant or model
+tests. Research statements in this revision are attributed to the course activity.

@@ -10,6 +10,7 @@ to sign-in.
 - [x] Three screen sketches and main flow diagram.
 - [x] All R1–R4 / D1–D6 findings mapped to decisions and tradeoffs.
 - [x] Conversation-first alternative compared with selected start-first design.
+- [x] User-state ideation incorporated: alternatives, self-report/observation/inference distinctions, explicit presentation control, and missing/conflicting-information behavior.
 - [x] Two-call SQL RAG, application control, storage, and history plan.
 - [x] Personalization, user choice, exit, independent crisis access, and timing assumptions.
 - [x] Open implementation questions and proposed fictional checks.

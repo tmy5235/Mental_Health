@@ -47,3 +47,12 @@ Only curated coursework prompts and design decisions are included. No credential
 - Assessed design checkpoint: `58d92cb028d3fe52f3bf452bad1a810253548e20`.
 - Anonymous HTTP checks returned 200 for the repository, assessed commit, and all six report-document links. See [publication results](publication-links.json).
 - Replaced report placeholders with accessible URLs. Publication metadata does not add application code or change the assessed design. No Canvas submission was performed.
+
+## 2026-10-15 — User-state ideation incorporated
+
+- Student supplied **[Ideation] Understanding User State: Questionnaires and Clicking Behavior** and requested including it in Part 1.
+- Compared questionnaire/check-in, behavioral measurement, and explicit presentation-choice alternatives. Selected the existing simplified-view direction with a concrete Show fewer options / Show more options control.
+- Added a distinction between attributed self-report, factual session behavior, and unsupported emotional-state interpretation. Specified behavior for missing or apparently conflicting information and added fictional expected checks (not executed).
+- Kept questionnaires, click-speed monitoring, pointing tasks, anxiety scores, dataset imports, and specialized-model adoption outside scope. This reduces input burden while giving up automatic state estimation and structured reflection.
+- Attributed study summaries to the supplied activity; no original papers, questionnaire items, model examples, datasets, or video were independently reviewed. Did not claim to complete the separately referenced graded group activity.
+- This changes the design rationale and requires a new assessed design checkpoint and updated report links; the earlier `58d92cb` snapshot does not include this activity.
