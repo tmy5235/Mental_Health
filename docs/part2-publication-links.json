@@ -1,0 +1,169 @@
+{
+  "checked_at": "2026-10-27T03:36:21.672774+00:00",
+  "method": "Anonymous HTTPS without authentication/cookies; report URLs plus raw file-byte comparison",
+  "assessed_commit": "83fb304882df74028daceacf3ea2a3ab29842181",
+  "checks": [
+    {
+      "url": "https://github.com/tmy5235/Mental_Health",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/AI-USE.md",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/README.md",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/backend/app/main.py",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/backend/tests/test_chat.py",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/design-pipeline.md",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/design-pipeline.md#part-2-visual-research-and-selected-design--october-26",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true,
+      "fragment_present": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/design-pipeline.md#research-grounding-and-tradeoffs",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true,
+      "fragment_present": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/evidence.md",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/part2-live-evidence.json",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-live-chat.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/01-home.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/02-preferences.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/03-mobile.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/04-active.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/05-completed.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/06-support-pauses.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/07-paused.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/08-stopped.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/09-history.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/10-saved-ai-chat.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/11-request-failure.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/12-support-during-failure.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/screenshots/part2-submission/13-recovered.jpg",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/83fb304882df74028daceacf3ea2a3ab29842181/docs/verification.md",
+      "status": 200,
+      "raw_status": 200,
+      "content_matches_local": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/commit/83fb304882df74028daceacf3ea2a3ab29842181",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/tree/codex/implementation-foundation",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/tree/f7b91254907a3eb18b22dc7d58b82a89960c63cb",
+      "status": 200
+    }
+  ]
+}

@@ -560,3 +560,16 @@ calls. All report/README local links resolve;74 candidate repository files check
 for credential patterns and the configured private key, with zero matches.
 backend/.env and data/app.sqlite3 are ignored/untracked; neither will be published.
 User explicitly authorized commit/push of the reviewed Part2 milestone.
+
+
+## Part 2 publication verified — October 26, 2026
+
+Assessed implementation commit: `83fb304882df74028daceacf3ea2a3ab29842181` pushed to
+`origin/codex/implementation-foundation`. Existing Part1 branch untouched; no
+merge, force push, hosted-app deployment or Canvas submission. Final report uses
+absolute immutable GitHub links so it works as a standalone uploaded Markdown
+file. Anonymous HTTPS checks returned200 for all28 distinct report links; raw
+published evidence bytes matched local copies and referenced heading fragments
+were present. Results: [part2-publication-links.json](part2-publication-links.json).
+Final report/publication metadata are a documentation-only follow-up; application
+source stays at the assessed commit. Credentials and runtime database excluded.
