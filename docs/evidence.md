@@ -56,3 +56,133 @@ Only curated coursework prompts and design decisions are included. No credential
 - Kept questionnaires, click-speed monitoring, pointing tasks, anxiety scores, dataset imports, and specialized-model adoption outside scope. This reduces input burden while giving up automatic state estimation and structured reflection.
 - Attributed study summaries to the supplied activity; no original papers, questionnaire items, model examples, datasets, or video were independently reviewed. Did not claim to complete the separately referenced graded group activity.
 - This changes the design rationale and requires a new assessed design checkpoint and updated report links; the earlier `58d92cb` snapshot does not include this activity.
+
+## 2026-10-20 — implementation started
+
+- Student request: “Can you start implementation”.
+- Inspected project, design, handoff, and installed tools; created feature branch
+  `codex/implementation-foundation` from `6a0fc60`.
+- Defined the session API contract and worked example before adding backend
+  models, repository, controller, and routes. Chose one backend operation before
+  the interface, following the project's incremental-development instruction.
+- Identical stable-ID retries preserve one row; conflicting retries cannot alter
+  history. Startup creates schema without seeding fictional sessions.
+- Seven standard-library storage tests passed, including concurrent retries,
+  rollback, and read-only row/relationship inspection. HTTP tests remain pending.
+- Dependencies are declared but not installed. AGENTS.md requires installation
+  approval. No provider calls, credentials, frontend, or Figma work occurred.
+
+## 2026-10-20 — approved dependency installation and testing
+
+- Student explicitly approved backend installation and testing. Created local venv
+  and installed declared packages; used network escalation after sandbox DNS
+  failure. Pinned direct versions and recorded the complete resolved package set.
+- Ran 14 existing tests; corrected a test-only unclosed SQLite connection warning.
+- Added a repeatable real-process HTTP test with temporary fictional records,
+  shutdown/restart, duplicate/conflict/validation checks, and SQLite comparison.
+  Corrected its exit-code assumption after inspecting Uvicorn's signal behavior.
+- Final suite: 15 passed. Corrected health OpenAPI 503 schema to match actual
+  output, then reran all seven API tests successfully.
+- Verified default localhost startup, API health/history/schema, empty working
+  database, and Ctrl+C shutdown. Browser navigation was blocked by the client;
+  recorded this limitation without claiming browser success.
+- No frontend dependencies, provider calls, credentials, Figma, commit, or push.
+
+## 2026-10-20 — running app
+
+- Student asked for a running app, then approved the three frontend dependencies
+  through the installation prompt. Prepared Vue scaffold and verified its health
+  request before expanding the interface.
+- Implemented the selected fixed paced-breathing sequence, text alternative,
+  explicit browser-local display controls, support dialog, session saving, and
+  paginated history. No model/provider dependency was introduced.
+- Verified U.S./territories support links with the helpline lookup; region is
+  labeled in the interface. No external support service was contacted.
+- Real browser testing caught Pause/Resume focus loss and a stale connection
+  status after failed saving; corrected these. A full exercise, stopped outcome,
+  support pause/Stop, refresh, server outage/retry, and SQLite/API identity were
+  checked. Records were preserved, including the user's demonstration session.
+- Twelve frontend and fifteen backend tests pass. Production build passes.
+  Browser timing for the measured completed session was 60.004 seconds.
+- Screenshot saved in docs/screenshots. Source and data limits are explicit:
+  unfinished reloads are unsaved, preferences are browser-local, SQL RAG/chat
+  remain later work. Visibility-change triggering needs a native-browser check.
+
+## 2026-10-26 — Part 2 implementation and quieter interface
+
+- Student asked to build the remaining assignment, simplify layout/copy, research
+  color and typography, and progress toward submission. Explained that the model
+  supplies optional chat, while the exercise never needs it. No key was provided.
+- Used Sites' local-only workflow and OpenAI Docs guidance; retained Vue/FastAPI/
+  SQLite and the existing checkout. No hosting, Figma, image generation, copied
+  Expedia code, new dependencies or clinical dataset.
+- Research: primary systematic color review and W3C cognitive/WCAG guidance.
+  Revised the premise from a universally calming color combination to a measured
+  contrast/presentation choice. Association with low arousal does not establish
+  an anxiety-reducing interface. Sources and tradeoffs are in design-pipeline.md.
+- Removed the large preview card, duplicate introductory copy and default motion;
+  adopted one main action, optional settings, 18/20px text and muted sage/ivory.
+- Implemented conversation/request/message persistence, stable retry IDs, five
+  tightly allowlisted SQL retrieval shapes, bounded OpenAI adapter, labeled mock
+  responses, explicit preferences and a restart-resistant 50-call budget.
+- Rejected free-form generated SQL in favor of a small exact template language.
+  Tradeoff: narrower questions, but an inspectable scope boundary with no extra
+  SQL parser/framework dependency. Stored text cannot invoke app actions.
+- Browser tests found navigation scroll/focus and stale recovery-status issues;
+  corrected them and checked rendered results. Full exercise measured 60.002s.
+  Outage/retry retained the request and saved one pair; SQLite/API/UI IDs matched.
+- All 50 automated checks passed (36 backend/14 frontend) and the bundle builds.
+  Provider transport tests are mocks. No live model, actual key setup or clinical
+  benefit is claimed. API setup helper refuses noninteractive key entry.
+- Rewrote report.md for Part 2 with actual evidence, preserved published Part 1
+  links, and left live demonstration/commit/publication/Canvas fields honest.
+
+
+### Palette feedback revision — October 26
+
+Student rejected green. Reviewed Wilms & Oberfeld's controlled color study and
+revisited the systematic review; selected muted blue/ivory with slate text.
+Changed CSS colors only, built successfully, calculated contrast and inspected
+home/chat/mobile. New blue screenshots preserve the previous evidence separately.
+See design-pipeline.md for research limits and verification.md for measured ratios.
+
+
+### Part 2 completion and live finding — October 26
+
+- Student requested finishing the assignment and approved reusing the prior
+  project's key locally for two fictional exchanges/four paid model calls.
+- Configured the ignored owner-only .env; no key printed or committed. Used
+  OpenAI Docs guidance and the existing Responses adapter; no dependency install.
+- Both live exchanges saved and matched SQLite/API/browser. Stable-ID replays
+  added neither replies nor usage; four calls total. Returned app to mock mode.
+- Failed assumption: schema-valid output and valid record IDs would imply a fully
+  grounded answer. Live history reply added “not paused,” unsupported by available
+  fields. Revised the prompt to prohibit that inference, preserved the reply and
+  documented that the change is not yet live-validated. This is a model limitation,
+  not a claim that the clinical safety of the app has been established.
+- Re-ran 50 automated checks/build; after prompt change,21 chat checks passed.
+  The initial server test needed localhost permission; the authorized rerun passed.
+
+
+### Breathing Room and submission captures — October 26
+
+Student requested a breathing-related name/logo, clearer help icon and screenshots
+covering assignment requirements. Authored inline SVG airflow and outlined plus
+icons, retained Crisis support text, and updated responsive branding. Captured13
+real states covering entry/preferences/mobile, active/completed/stopped exercise,
+support pause, saved records/AI replies, unavailable service/support and recovery.
+Mapped each to Part 2 in report.md. Reused actual saved AI replies without paying
+for new calls. Detected an incorrect viewport target from dimensions and replaced
+that capture with verified390px evidence. Timing/storage claims use actual records,
+not screenshots alone; no video recording claimed.
+
+
+### Authorized Part2 publication — October26
+
+Student asked to publish and double-check all Part2 requirements. Re-read supplied
+assignment and matched requirements against report evidence. Exact Canvas Part2
+URL required Penn State sign-in, so no authenticated rubric verification claimed.
+Re-ran50automated checks and build successfully. Checked source/evidence for the
+actual local key and credential patterns without printing it; no matches.
+Publish the implementation branch, then finalize standalone report links to its
+immutable assessed commit. Canvas upload remains the student's action.

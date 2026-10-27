@@ -36,3 +36,92 @@ and add proposed fictional cases. It updated the design, report, and project not
 It did not independently read the referenced research papers or inspect/download
 questionnaires, datasets, models, or videos, and did not run participant or model
 tests. Research statements in this revision are attributed to the course activity.
+
+## Backend foundation, October 20, 2026
+
+Codex inspected local project files/tools and authored a session API contract,
+Python/FastAPI source, SQLite persistence, and tests. No Expedia source was
+copied. Seven standard-library tests passed against temporary fictional records.
+HTTP tests were authored but not run because dependencies are absent. No provider,
+RAG, browser, Figma, or clinical testing occurred. Model identification remains
+limited to the supplied GPT-6 context. Installation approval is pending.
+
+## Backend installation and verification, October 20, 2026
+
+Following explicit student approval, Codex used pip in backend/.venv to install
+backend dependencies, recorded their resolved versions, and ran automated and
+real-process localhost checks. It corrected test SQLite cleanup and the restart
+exit-code assumption, and aligned the health OpenAPI error schema with actual
+responses. Fifteen tests passed; the affected seven API tests passed again after
+the schema correction. Local sqlite3 read-only inspection checked fictional rows
+and relationships. A browser attempt via computer-use tools returned
+ERR_BLOCKED_BY_CLIENT, so no browser result is claimed. No application provider
+or model calls, frontend code, Figma work, or clinical evaluation occurred.
+
+## Running Vue prototype, October 20, 2026
+
+Codex authored the Vue app, fixed timing controller, HTTP client, history view,
+styles, and Node built-in tests. Installed Vue/Vite/plugin dependencies only after
+explicit student approval. Used the available helpline lookup for the labeled
+U.S. support resources. Browser tools operated Chrome Guest and the Codex browser
+for fictional scenarios; local Python inspected SQLite read-only and compared
+IDs with API/UI records. Corrected focus handling and failure wording based on
+observations. No Figma, image-generation service, prior-project source copying,
+provider/model API calls, real patient data, or clinical evaluation was used.
+A screenshot and detailed observed/unverified checks are retained in docs.
+
+## Part 2 build, research and verification — October 26, 2026
+
+Codex authored the conversation/retrieval/provider/preferences code, simplified
+Vue layout/styles, tests, private setup helper and Part 2 report updates. The
+coding assistant's exact runtime model identifier remains unavailable; it is
+identified as GPT-6-based in supplied context. No subagents were used.
+
+Tools: local shell/apply_patch/Git inspection; Python unittest/SQLite read-only
+inspection; Node tests and Vite build; web research of original publications,
+W3C guidance and official OpenAI documentation; browser computer-use and screenshot
+tools; helpline lookup to reverify regional resources. Applied Sites' local-only
+workflow and OpenAI Docs guidance. No public hosting, Figma, image generation,
+new package installation, copied prior-app source, private messages or real patient
+data were used. See design-pipeline.md for citations and evidence.md for revisions.
+
+Application provider: default deterministic `demo-v1` mock logic, clearly labeled
+in UI and stored reply metadata. Prepared OpenAI Responses API with configurable
+model (setup suggestion `gpt-4.1-mini`) for scoped SQL selection and concise grounded
+answers. **No real model API calls have been made**; provider HTTP tests are mocked.
+Mock crisis branches are demonstration behavior, not a validated risk classifier.
+
+The student must review generated code, understand the SQL allowlist, request
+transactions and timer boundaries, verify a small live sample, and finalize the
+submission. Research-informed aesthetics and passing software tests do not show
+clinical effectiveness or establish a universally calming palette.
+
+
+Palette follow-up: Codex researched the student's request to replace green,
+reviewed Wilms & Oberfeld (2018) and Jonauskaite & Mohr (2025), changed CSS to
+muted blue/ivory, calculated contrast, built the frontend and inspected desktop
+and mobile in the real browser. Exact colors are design judgments, not a proven
+anxiety intervention. No new dependency, generated image or model API call.
+
+
+## Live model contribution — October 26, 2026
+
+The student approved reusing a private key locally and four paid calls. OpenAI
+Responses with configured alias `gpt-4.1-mini` performed SQL-template selection
+and answer generation for two fictional browser exchanges. The exact returned
+model snapshot was not captured. Replies and cited IDs were saved and inspected;
+see docs/part2-live-evidence.json. Only the key configuration was reused from the
+prior Expedia app, not source code or private conversation records.
+
+A live reply inferred that a completed session was not paused; that was not
+established by retrieved fields. Codex strengthened the prompt, preserved the
+original output and documented that no live retest was performed after the change.
+Four calls total; identical retries added none. Routine app mode was reset to mock.
+Earlier “no live calls” entries describe their historical checkpoints only.
+
+
+Branding/screenshots follow-up: Codex renamed the prototype Breathing Room and
+authored small inline SVG airflow/help icons in Vue, adjusted responsive header
+styles and updated the browser title. No image generator or new dependency used.
+Recaptured real interface states for Part 2 coverage; no screenshots fabricated
+and no stored live answer edited. No additional paid model calls.

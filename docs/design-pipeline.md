@@ -1,6 +1,52 @@
 # Part 1 design: paced breathing
 
-Part 1 design specification, finalized October 15, 2026. All application behavior described here is proposed. No implementation or usability testing has occurred.
+## Part 2 implementation contract — October 26, 2026
+
+This increment supersedes earlier statements that chat and preferences are only planned.
+Keep six 4/6 cycles, independent support, stop, saved session IDs, and existing data.
+Use the existing branch and dependencies. No deployment or clinical claims.
+
+Before implementation: `PUT /api/conversations/{conversation_id}/messages/{request_id}`
+accepts `{content}` (1–1000 trimmed characters), both IDs UUIDs. It saves the user
+message before retrieval, returns a typed exchange with `saved: true` only after
+the actual reply is committed, and returns consistent error envelopes otherwise.
+Identical successful retries return the same exchange without provider calls;
+conflicting ID reuse is 409. Pending attempts have a bounded lease; failed/expired
+attempts can retry with the same IDs and content. No reply is invented on failure.
+`GET /api/conversations` paginates summaries; `GET /api/conversations/{id}` returns
+ordered messages with request status, provider mode, supporting IDs and timestamps.
+`GET/PUT /api/preferences` reads/writes explicit mode, simple-view, and font size.
+All records belong to the fixed fictional profile; this is not a multi-user service.
+
+RAG deliberately supports a small finite SQL language: exact approved SELECT
+templates for recent sessions (all/completed/stopped), this conversation's messages,
+or explicit preferences. Normalize whitespace only; reject every other string,
+including extra statements, comments, altered scopes, joins and functions.
+Values are bound by the backend, never accepted as model-supplied ownership.
+Read-only SQLite URI, authorizer, 5-row limits, 100ms execution budget and a
+12,000-character context cap supplement the allowlist. The first provider call
+sees schema/templates and the question, not stored rows. The second sees selected
+records with field meanings plus reviewed skill material. Retrieved text is data.
+Example: asking about the last session retrieves its ID, time, status and duration;
+an answer may describe these facts, never infer improvement or a reason for stopping.
+
+Default provider is visibly labeled `mock`. OpenAI Responses API is prepared
+using backend-only configuration, `store: false`, strict JSON output, a 20-second
+total deadline per call, checked response size/status/schema and no automatic retries.
+Missing live configuration fails honestly. A persistent per-demo-session budget
+reserves two calls before each live exchange, capped at 50 across restart; unused
+reserved calls are conservatively counted. At the cap, use labeled mock replies.
+Live configuration does not prove a successful live call.
+
+Presentation: one centered practice area, brief instructions, quiet secondary
+navigation, collapsed optional settings, text-only pacing by default, 18px base
+text with optional 20px, and no decorative animation. Muted blue/ivory is a design
+choice, not an established treatment. Source research and contrast verification
+will be recorded with observed results. User-selected settings remain changeable.
+
+Part 1 design specification, finalized October 15, 2026. The design below remains
+the target. Implementation began October 20; the increment and its verification
+limits are recorded at the end of this document.
 
 ## Purpose and scope
 
@@ -245,3 +291,268 @@ The student supplied the assignment overview and its research table on October 1
 Additional supplied source: **[Ideation] Understanding User State: Questionnaires and Clicking Behavior**, received October 15. Its pasted text did not retain the underlying reading URLs. The discussion above attributes research summaries to this activity rather than claiming direct review of the papers, questionnaire, models, datasets, or video. It points to a separate **Graded In-class Activity 3: Exploring Directions for Assignment 3**; those group/submission instructions were not supplied, so this incorporation does not claim completion of that separate graded activity.
 
 These course pages may require institutional access. This document is based on the supplied copies. The separate Part 1 submission page redirected to sign-in when checked; no additional page-specific instructions were verified. For this milestone, the flow and sketches above provide the design artifact. A running app, Figma file, and recording have not been produced.
+
+## Implementation increment 1 — session API foundation, October 20
+
+Scope: a localhost backend for one fixed fictional profile, `fictional-alex`.
+No provider calls, chat, RAG, preferences, active-session recovery, or interface
+are implemented in this increment. Prove this backend operation before connecting
+Vue. No Figma work is included.
+
+### Contract defined before implementation
+
+All paths below are application APIs. Errors use
+`{"error":{"code":"...","message":"..."}}`; validation errors return 422,
+conflicting reuse of an ID returns 409, and unavailable storage returns 503.
+Do not include submitted content, database paths, or exception text in errors.
+The health endpoint is the exception to the error envelope: on storage failure
+it returns 503 with its typed health body and `storage_available: false`.
+
+| Method/path | Validated input | Successful response |
+| --- | --- | --- |
+| `GET /api/health` | None | 200: service status, storage availability, `provider_mode: "not_implemented"`. No credential values. |
+| `PUT /api/sessions/{session_id}` | UUID; timezone-aware start/end timestamps; `status` of `stopped` or `completed`; active seconds 0–60; completed cycles 0–6; `display_mode` of `text` or `motion` | 200: `{saved: true, session: ...}` with normalized UTC timestamps, stable ID, fixed profile/skill/version, and `fictional: true`. |
+| `GET /api/sessions?limit=20&offset=0` | Limit 1–100; offset 0–100000 | 200: `{sessions: [...], limit, offset}` ordered by start time descending, then ID. An empty database returns an empty list. |
+
+Duration excludes voluntary pauses. End must follow start, and active duration
+cannot exceed wall-clock duration. Completed means exactly 60 active seconds and
+six cycles. Stopped means fewer than 60 active seconds, with completed cycles
+equal to floor(active seconds / 10). The API trusts these validated fictional
+client measurements; it does not establish elapsed-time accuracy independently.
+The UI will use `stopped` for the design's earlier `ended` label.
+
+Worked example: PUT session `11111111-1111-4111-8111-111111111111`,
+start `2026-10-20T12:00:00Z`, end `2026-10-20T12:00:25Z`,
+active duration 20, two completed cycles, status `stopped`, display `text`.
+The stored record shows 20 active seconds within 25 wall-clock seconds.
+An identical retry returns that record without another insert. Reusing the ID
+with different values returns 409 and preserves the original. History never
+requires a model call and never interprets the reason for stopping.
+
+Only backend code opens SQLite. Its default location is resolved from
+`backend/app/repository.py` to `data/app.sqlite3`, independent of working
+directory. Startup creates missing schema, inserts no fixtures, and preserves
+existing rows. Tests inject temporary database paths and fictional records.
+Terminal records are immutable in this increment; reload recovery for active
+sessions remains a later task.
+
+### Responsibility map
+
+- `backend/app/models.py`: typed API models and cross-field validation.
+- `backend/app/repository.py`: schema, parameterized transactions, ordered reads.
+- `backend/app/controllers.py`: session save/history orchestration.
+- `backend/app/main.py`: small FastAPI routes, lifecycle, and consistent errors.
+- `backend/tests/`: storage behavior and HTTP contract checks.
+
+SQLite uses a bounded connection timeout. Saves are serialized in a transaction,
+and IDs are primary keys. A conflicting retry cannot overwrite an existing
+session. No secrets or environment variables are required yet; configuration
+loading and `backend/.env.example` will accompany provider integration.
+
+### Backend verification and setup follow-through
+
+The user approved dependency installation on October 20. FastAPI 0.156.0,
+Uvicorn 0.54.0, HTTPX 0.28.1, and Pydantic 2.14.1 are installed in backend/.venv;
+direct manifests are pinned and requirements-lock.txt records all resolved
+packages. The seven storage, seven API, and one live-process test passed.
+The health endpoint's documented 503 schema now matches its actual Health body.
+A real localhost server restart preserved both fictional terminal records and
+idempotent retries. API values were compared with read-only SQLite rows and
+foreign-key/integrity checks. Default startup creates empty schema, not fixtures.
+Browser verification could not proceed because the in-app browser returned
+ERR_BLOCKED_BY_CLIENT. This is backend evidence only; no Vue view exists yet.
+
+## Implementation increment 2 — running local exercise
+
+Requested October 20. Preserve the session API above. First verify Vue's GET
+`/api/health` through Vite's localhost proxy; then expand to the exercise.
+Vue controls the fixed six 4-second-in/6-second-out cycles. A monotonic elapsed
+clock drives phase/count, stops at 60 active seconds, and excludes explicit
+pauses. Opening support or hiding the tab pauses; return requires explicit Resume.
+Stop remains available even while support is open. Final session writes never
+block exiting. Freeze each completed/stopped payload under its UUID so retries
+are identical. Failed/pending saves remain visible outside the exercise.
+
+The first UI uses GET history and PUT session contracts, without model calls.
+Display preferences are explicitly remembered on this browser, labeled as such,
+with reset. Backend preference storage and conversations/RAG remain later work.
+Reload resets the exercise; unfinished active sessions are not yet saved.
+Disclose this before Start. Never silently record a refresh as completion.
+
+Support is bundled in the frontend, independent of API availability. Region is
+clearly labeled United States and territories, based on this course context.
+Verified October 20 using the available helpline lookup:
+[988](tel:988?oai_link_source=model_response_hotline),
+[988](sms:988?oai_link_source=model_response_hotline),
+[https://988lifeline.org/chat/](https://988lifeline.org/chat/?oai_link_source=model_response_hotline),
+[https://988lifeline.org](https://988lifeline.org?oai_link_source=model_response_hotline).
+These are external services; this coursework app provides no monitoring.
+
+### Implemented frontend and contracts
+
+The Vue health request was verified in Chrome before expanding the interface.
+`frontend/src/App.vue` owns views, timer lifecycle, explicit display settings,
+modal support, and the terminal-save queue; `breathing.js` owns fixed phase/count
+rules; `api.js` owns finite five-second HTTP requests; SessionHistory.vue owns
+paginated history display. Vite proxies `/api` to localhost:8000, avoiding browser
+SQLite access or provider secrets. Node dependencies are declared and locked.
+
+Completed/stopped payloads use the existing API. `display_mode` is the final
+selected display; the history column explicitly says Final display. UUIDs and
+terminal payloads remain unchanged across retries. Unconfirmed saves are kept
+in sessionStorage for same-tab refresh recovery, removed only after explicit
+API confirmation. Requests for old saves cannot navigate or change a new exercise.
+History drops stale responses after unmount and distinguishes empty, loading,
+failure, and success. Its table reads saved rows and exposes record IDs.
+
+Preferences (text/motion, fewer/more options) are currently browser-local and
+explicitly labeled; backend persistence is still planned. Reduced-motion defaults
+to text. There is no click tracking, questionnaire, inferred state, or model call.
+Reload during an unfinished exercise resets without saving, disclosed before Start.
+This increment does not implement interrupted-session records or active recovery.
+
+The support dialog is independent of the API, pauses pacing, never automatically
+resumes, traps focus with native dialog behavior, and includes Stop. The header
+stays visible during scrolling. Keyboard Pause/Resume uses one persistent button
+to retain focus. Tested colors have contrast ratios of 5.48:1 or higher for the
+checked body/secondary/button/error text pairs. A 390-pixel viewport had no
+page-level horizontal overflow; history can scroll within its table wrapper.
+
+Verification recorded one full browser sequence with 60 active seconds and
+60.004 seconds between saved start/end timestamps. The observation occurred
+within 65.6 seconds of Start (no setup time included). This is software timing
+for one run, not effectiveness or broad browser-performance evidence.
+The visibility handler is implemented, but opening another Codex browser tab
+left the original document visible, so that attempt did not verify hidden-tab
+pause. Native-browser visibility changes remain a follow-up check.
+
+## Part 2 visual research and selected design — October 26
+
+The student requested fewer words, a simpler layout, and a restrained appearance.
+The initial October 26 design used an ivory background (#f5f5ef), dark green text (#293f38),
+sage surfaces (#e4ebe2), and a deep green action (#365c4e). These exact hex values
+were design judgments, not values prescribed by research or a therapeutic intervention.
+
+Sources reviewed and applications:
+
+- Jonauskaite & Mohr's [2025 systematic review](https://link.springer.com/article/10.3758/s13423-024-02615-z)
+  covers 132 studies. Blue, green and related hues were often associated with
+  lower-arousal positive emotions, but associations do not establish that a
+  particular interface reduces anxiety. Context and individual response remain
+  limitations. This supports considering a restrained green palette, not calling
+  it the best palette for a clinical population.
+- W3C [Avoid Too Much Content](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o5p03-manageable-quantity/)
+  and [Clear and Understandable Content](https://www.w3.org/WAI/WCAG2/supplemental/objectives/o3-clear-content/):
+  one main action, short lines, three supporting navigation choices, and collapsed
+  display settings replace the two-column preview and repeated instructions.
+- W3C [Use Clear Words](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o3p01-clear-words/):
+  short labels such as Start breathing, Pause, Stop, Chat, and History. Necessary
+  fictional-use, persistence, and support information remains visible.
+- W3C [Unobscured Foreground](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o3p11-unobscured-foreground/):
+  plain backgrounds, no textures, imagery, parallax, soundtrack, or decorative animation.
+- W3C [Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html):
+  keep dark readable text despite muted surfaces. Checked ratios are in verification.md;
+  pale low-contrast typography was rejected.
+- W3C [Animation from Interactions](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html):
+  still text is now the default; moving circle is explicit and reversible.
+  An OS reduced-motion preference forces still text on load. Pause and Stop persist.
+- W3C [Text Spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html)
+  and [Target Size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html):
+  18px default base/20px optional base, 1.6 line height, flexible wrapping, visible
+  focus and mostly 44–48px controls. These sizes are design choices, not WCAG's
+  required font sizes. Full text-spacing overrides and screen-reader behavior are
+  not yet verified. Inline links are a target-size exception; no full conformance claim.
+
+Typography uses a system sans-serif for controls/body and a restrained Georgia
+heading. No webfont requests or additional dependencies. A centered task layout
+was selected over a multi-card dashboard: less simultaneous content, but secondary
+information requires opening Chat, History, Display settings, or Record details.
+This is intentional progressive disclosure, not automatically inferred distress.
+
+### Actual responsibility and storage changes
+
+- `chat_models.py`: typed chat/history/preferences contracts; `chat_repository.py`:
+  transactional conversations, messages, request attempts, preferences, provider budget.
+- `retrieval.py`: SQL templates, validation, scope bindings and read-only execution.
+- `provider.py`: reviewed skill/prompt rules, deterministic `demo-v1` and OpenAI adapters.
+- `chat_controller.py`: first save → query call → read-only retrieval → answer call
+  → checked citations → transactional reply save. `main.py` remains the HTTP boundary.
+- `config.py`: explicitly loads ignored `backend/.env`, environment takes precedence.
+  Configuration requires a backend restart. Health reveals presence/mode/count, no key.
+- `ChatPanel.vue`: chat, saved conversations, status, retry and record disclosure.
+  Render model output as plain text; it cannot invoke navigation or exercise controls.
+- App.vue retains the exercise controller and session outbox; explicit preferences
+  now persist through the API, with local browser fallback and honest failure wording.
+  Preference writes are serialized; a late initial read cannot override a new choice.
+
+SQLite schema additions are additive and seed no demo rows. Request UUIDs are
+unique across conversations; one user/one assistant row per successful request.
+Message sequence is ascending insertion order; timestamps are UTC. Failed user
+messages remain saved with status; expired 90-second attempts become retryable.
+Successful retry returns the same saved exchange without another provider call.
+Conversation and message listings paginate; retrieval is limited to five records.
+No accounts, delete-history action, automatic clinical classification, or vector DB.
+
+The OpenAI adapter follows the [Responses text guide](https://developers.openai.com/api/docs/guides/text)
+and [structured-output guide](https://developers.openai.com/api/docs/guides/structured-outputs).
+The optional setup defaults to [gpt-4.1-mini](https://developers.openai.com/api/docs/models/gpt-4.1-mini),
+which documents structured-output support. This is a configurable integration
+choice, not a claim of clinical suitability or the newest/best model. No live API
+request has been made. `store: false` is not a promise about all provider retention.
+The app makes no claims that prompt instructions guarantee safe or accurate replies.
+
+
+## Palette revision after student feedback — October 26, 2026
+
+The student disliked green. Replaced it with muted blue accents (#526783), warm
+ivory background (#f7f4ef), dark slate text (#303744), secondary text (#606775),
+and pale blue surfaces (#e8edf4). Exact colors and warm ivory are design choices;
+research does not prescribe these values or establish an anxiety treatment.
+User preference is part of the selection. The earlier green screenshots and
+checks remain historical evidence, superseded visually by part2-blue-home.jpg
+and part2-blue-mobile.jpg.
+
+[Wilms & Oberfeld (2018)](https://pubmed.ncbi.nlm.nih.gov/28612080/)
+independently varied hue, saturation and brightness with 62 participants.
+Self-rated arousal increased from blue/green to red and with saturation and
+brightness. This supports trying restrained blue accents, but laboratory color
+exposure is not evidence that this app reduces clinical anxiety. The
+[Jonauskaite & Mohr review](https://link.springer.com/article/10.3758/s13423-024-02615-z)
+finds blue commonly associated with positive, lower-arousal emotions, while
+emphasizing that associations need not produce experienced emotions. Desaturation
+is not universally more pleasant; avoid treating grayness as the goal.
+
+The revision changes CSS colors only. Typography, low-content layout, still-text
+default, timing, support, and data contracts remain as previously implemented.
+Kept dark text rather than lowering text contrast to make the interface soft.
+WCAG contrast and desktop/mobile observations are recorded in verification.md.
+
+
+## Live-model implementation finding — October 26
+
+Two real `gpt-4.1-mini` exchanges proved the two-stage provider path and normal
+save/history flow. One answer correctly cited a completed session but inferred
+that it was not paused, which the retrieved fields cannot establish. The answer
+prompt now explicitly forbids pause-history and stop-reason inferences; output
+remains untrusted and cannot operate the app. This refinement has not been
+live-retested. Retain the original answer as evidence in part2-live-evidence.json.
+Four approved model calls were used; returned to mock for routine/peer testing.
+The exact configured model alias, not a returned snapshot ID, is persisted.
+
+
+## Breathing Room identity — October 26, 2026
+
+Student requested the name Breathing Room, an app-related logo and clearer help
+iconography. Replaced the half-circle glyph with an original inline SVG airflow
+mark and changed the document title and visible brand. The support button uses
+a blue outlined medical-style plus in a circle, with the explicit Crisis support
+label retained. Decorative SVGs are hidden from assistive technology; the control
+keeps its descriptive accessible name and independent bundled support behavior.
+No imagery service, icon library or dependency is needed. The header can wrap on
+narrow screens while preserving the name, breathing mark and support text.
+
+New numbered submission screenshots replace older branding in the report; older
+captures remain historical evidence. Saved AI messages are recaptured from real
+stored replies without new model calls, with current mock mode labeled honestly.
+Screenshots illustrate behavior; timing, SQL persistence and retries still rely
+on the verification log, record IDs and actual test evidence.

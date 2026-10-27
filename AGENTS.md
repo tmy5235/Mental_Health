@@ -232,7 +232,12 @@ The Part 1 design is maintained in `docs/design-pipeline.md`; `docs/design.md`
 links to it for compatibility. Read `docs/verification.md`, `docs/evidence.md`,
 and `handoffs/current.md` for current claims and limits. The README design
 fields are completed, and the SQL RAG requirement is reconciled across documents.
-No app is implemented. Continue the chosen paced-breathing scope unless the
+Vue, FastAPI and SQLite now implement exercise/history, conversations, scoped
+SQL RAG and explicit preferences. Fifty automated tests pass. Two real OpenAI
+exchanges were saved and inspected (four calls); routine mode is mock. One live
+reply inferred pause history unsupported by retrieved fields; a prompt refinement
+has not been live-retested. Read current verification/evidence for exact limits.
+Continue the chosen paced-breathing scope unless the
 student requests a change. Figma remains an optional later design method and is
 not a prerequisite for the Part 1 submission.
 

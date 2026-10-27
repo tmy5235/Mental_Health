@@ -1,0 +1,123 @@
+{
+  "checked_at": "2026-10-27T03:15:31.202862+00:00",
+  "model_configured": "gpt-4.1-mini",
+  "scope": "Two fictional browser exchanges, four live calls; no extra calls on identical retries.",
+  "conversation_id": "ee590ec5-eed1-474a-80fc-6424b378f5ad",
+  "messages": [
+    {
+      "id": "03654ffb-b393-4726-88c7-c181bdac5817",
+      "conversation_id": "ee590ec5-eed1-474a-80fc-6424b378f5ad",
+      "request_id": "2591ef2a-1457-49d2-a6b0-d750d5ffaec9",
+      "role": "user",
+      "content": "Fictional coursework demo: explain the paced-breathing sequence and how I can stop.",
+      "created_at": "2026-10-27T03:14:20.564601+00:00",
+      "sequence": 5,
+      "status": "completed",
+      "provider_mode": "openai",
+      "model": "gpt-4.1-mini",
+      "record_ids": [],
+      "retrieval_status": null
+    },
+    {
+      "id": "273e3831-c323-4db7-8f6f-b6dfa2a74401",
+      "conversation_id": "ee590ec5-eed1-474a-80fc-6424b378f5ad",
+      "request_id": "2591ef2a-1457-49d2-a6b0-d750d5ffaec9",
+      "role": "assistant",
+      "content": "The paced-breathing sequence involves six cycles of breathing where each cycle includes four counts of inhaling and six counts of exhaling, lasting about 60 active seconds. You can start, pause, resume, or stop the sequence through the app controls. Opening the Crisis support will also pause the exercise if needed.",
+      "created_at": "2026-10-27T03:14:24.633592+00:00",
+      "sequence": 6,
+      "status": "completed",
+      "provider_mode": "openai",
+      "model": "gpt-4.1-mini",
+      "record_ids": [
+        "03654ffb-b393-4726-88c7-c181bdac5817"
+      ],
+      "retrieval_status": "selected"
+    },
+    {
+      "id": "0ef1d968-2a96-426d-832f-ec0da656fdc1",
+      "conversation_id": "ee590ec5-eed1-474a-80fc-6424b378f5ad",
+      "request_id": "a85a2b59-22bc-4b45-8cb2-b54fab2c5190",
+      "role": "user",
+      "content": "For fictional Alex, what happened in the most recent completed breathing session? Give its duration and display mode, without guessing how Alex felt.",
+      "created_at": "2026-10-27T03:14:35.912957+00:00",
+      "sequence": 7,
+      "status": "completed",
+      "provider_mode": "openai",
+      "model": "gpt-4.1-mini",
+      "record_ids": [],
+      "retrieval_status": null
+    },
+    {
+      "id": "92fb3f84-9c84-4b6f-880d-386843a67c47",
+      "conversation_id": "ee590ec5-eed1-474a-80fc-6424b378f5ad",
+      "request_id": "a85a2b59-22bc-4b45-8cb2-b54fab2c5190",
+      "role": "assistant",
+      "content": "The most recent completed breathing session for Alex lasted 60 seconds with 6 cycles completed, using the text display mode. This session was fully completed and not paused. No details about how Alex felt during the session are available.",
+      "created_at": "2026-10-27T03:14:38.362616+00:00",
+      "sequence": 8,
+      "status": "completed",
+      "provider_mode": "openai",
+      "model": "gpt-4.1-mini",
+      "record_ids": [
+        "6f38bdd8-9e16-4fbf-beac-e959f95795fe"
+      ],
+      "retrieval_status": "selected"
+    }
+  ],
+  "completed_session_query_results": [
+    {
+      "id": "6f38bdd8-9e16-4fbf-beac-e959f95795fe",
+      "started_at": "2026-10-27T02:55:28.546000+00:00",
+      "status": "completed",
+      "active_duration_seconds": 60.0,
+      "cycles_completed": 6,
+      "display_mode": "text"
+    },
+    {
+      "id": "10b98536-62bc-460b-a78c-429cadd54ab6",
+      "started_at": "2026-10-20T17:58:08.971000+00:00",
+      "status": "completed",
+      "active_duration_seconds": 60.0,
+      "cycles_completed": 6,
+      "display_mode": "motion"
+    },
+    {
+      "id": "ee246f94-1082-4126-9316-a110542df822",
+      "started_at": "2026-10-20T17:56:29.331000+00:00",
+      "status": "completed",
+      "active_duration_seconds": 60.0,
+      "cycles_completed": 6,
+      "display_mode": "motion"
+    }
+  ],
+  "api_sqlite_content_ids_match": true,
+  "integrity": "ok",
+  "foreign_key_errors": [],
+  "duplicate_request_roles": [],
+  "counts": {
+    "sessions": 6,
+    "conversations": 2,
+    "messages": 8,
+    "chat_requests": 4
+  },
+  "reserved_usage": [
+    {
+      "demo_session": "part2-local",
+      "reserved_calls": 4
+    }
+  ],
+  "health_after_replay": {
+    "status": "ok",
+    "storage_available": true,
+    "provider_mode": "openai",
+    "provider_configured": true,
+    "live_calls_reserved": 4,
+    "live_call_limit": 50
+  },
+  "review": {
+    "exercise_explanation": "Matches reviewed six 4/6 cycles, 60 active seconds and app controls.",
+    "history_answer": "Correct latest completed ID, 60 seconds, 6 cycles and text display. Unsupported statement: not paused. Pause history was not in retrieved fields.",
+    "response_to_finding": "Prompt now explicitly disallows pause-history and stop-reason inferences. Changed prompt not live-retested within approved four-call budget; no guarantee of semantic grounding."
+  }
+}
