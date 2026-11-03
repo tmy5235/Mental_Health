@@ -58,8 +58,9 @@ milestones remain in Git and raw evidence, not as contradictory current promises
 
 ## Delivery boundary
 
-The user explicitly directed **do not push yet**. Keep this work local; do not
-push, publish, deploy or submit it without a later instruction. Figma, additional
-skills, accounts, clinical studies and public hosting are outside this scope.
+The user authorized publication of the completed Part 3 branch, report, evidence
+and recordings to the existing GitHub repository. The earlier publication hold
+is superseded. This does not authorize public app hosting or assignment-system
+upload. Figma, additional skills, accounts and clinical studies remain outside scope.
 Update the handoff and final report after relevant changes. Stage only intended
 files; never include runtime databases, credentials or dependency directories.

@@ -26,12 +26,12 @@ database and EVIDENCE_DIR for new evaluations.
 
 ## Delivery status
 
-The user's explicit instruction is **do not push yet**. No final-version push,
-public hosting or assignment-system upload is authorized by the review request.
-There is no pending permission question. Final report/source/evidence/recordings
-are available locally; publication remains held until a later instruction.
-Relative report links work within the complete source package. Do not describe
-unpublished immutable links as externally verified.
+The user explicitly authorized pushing the complete Part 3 branch and making the
+report ready to submit, superseding the earlier hold. The final branch is published
+at the existing repository. The report uses immutable source/evidence links so it
+works as a standalone Markdown upload. Both the finished demonstration and required
+process screencast remain included. No public application hosting or assignment-system
+upload has occurred. Preserve the original working data and local configuration.
 
 ## Preserved boundaries
 

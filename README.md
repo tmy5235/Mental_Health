@@ -23,8 +23,14 @@ a public support service. Only fictional content belongs in its local database.
 Prerequisites: Python 3.14, Node.js 24/npm, and Git. The verified versions below
 are the tested environment, not a claim that all older versions work.
 
-From the extracted submission or local repository root (the final branch is not
-yet published):
+Clone the published final branch, or use the extracted source package:
+
+```sh
+git clone --branch codex/part3-final https://github.com/tmy5235/Mental_Health.git
+cd Mental_Health
+```
+
+From the project root:
 
 ```sh
 python3 -m venv backend/.venv

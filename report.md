@@ -112,7 +112,7 @@ support service was contacted and no clinical effectiveness is claimed.
 
 ## Submission artifacts
 
-The linked design, evidence, code and recordings are included in the complete local
-source package. This final branch remains unpublished at the author's direction;
-relative links are usable within that package. Repository publication and upload
-to the assignment system have not occurred for this final version.
+The source, design, verification evidence and both recordings are published in the
+repository. The linked checkpoint preserves the evaluated implementation and its
+evidence. This report is the standalone assignment deliverable; the application
+remains a localhost prototype, and no assignment-system upload is claimed.

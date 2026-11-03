@@ -85,5 +85,7 @@ JSON, logs and recordings retain their original wording and results.
 Full screen-reader speech, native browser zoom, real OS reduced-motion settings,
 another operating system and live credential entry on a new machine remain
 untested. Browser emulation does not establish those outcomes. No clinical benefit
-or comprehensive accessibility conformance is claimed. Repository publication is
-held at the user's instruction; external access to this final version is unverified.
+or comprehensive accessibility conformance is claimed. The final branch has been
+pushed to the existing GitHub repository with explicit authorization. Publication
+link checks are a separate delivery check from application testing; the final
+report identifies the published checkpoint and linked evidence.

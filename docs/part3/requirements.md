@@ -21,7 +21,8 @@ scope; it does not predict a grade or demonstrate clinical effectiveness.
 | Finished demo and process screencast | Full exercise, history, personalization, model contribution, support/recovery; pagination failure, API evidence, correction and source explanation. | [Finished demo](finished-demo.mp4), [process screencast](process-screencast.mp4), [chapters](recordings.md). |
 | AI tools/models and curated process evidence | Roles/known identifiers, selected prompts, failed approaches, checks and decisions are disclosed. | [AI-USE](../../AI-USE.md), [evidence log](../evidence.md). |
 | Final report and maintained project documents | Report, README, AGENTS, design, verification and evidence agree with the final implementation. | [Report](../../report.md). |
-| Repository/version and accessible artifacts | Repository named; relative links work in the local source package. Final GitHub publication is held by explicit instruction. | [Delivery status](../../handoffs/current.md). |
+| Repository/version and accessible artifacts | Final branch published to the named repository; the standalone report identifies an immutable source/evidence commit and public artifact links. | [Delivery status](../../handoffs/current.md). |
 
-The local deliverables are complete. Publication and assignment-system upload
-are separate delivery actions and have not occurred for this final version.
+The source, report, evidence and recordings are published on the final branch.
+The standalone report is the assignment deliverable; assignment-system upload
+remains a separate action.

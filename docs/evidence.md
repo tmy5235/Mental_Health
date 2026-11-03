@@ -21,7 +21,7 @@ remain in Git. [AI-USE.md](../AI-USE.md) identifies tools and assistance roles.
 | First demo recording timed out | Replaced the incomplete capture with a successful full normal-speed recording. | Metadata and representative decoded frames checked; the failed capture is not an application failure claim. Separate S01 provides timing evidence. |
 | Automated tab switch did not actually hide the document | Preserved S15 as inconclusive; supplemented with a native Chrome tab switch. | Native return showed Paused, Resume, cycle 1/6, 58s left and count 2; another observation showed the same values. No synthetic visibility event counted. |
 | Final request to check functionality/documents and use final-submission language | Consolidated stale milestone notes into final rationale, contracts, evidence and requirement coverage; retained required prototype and AI disclosures. | 54 tests and build pass again; 17 automated scenario passes plus the native S15 observation. The final rendered timing was 66.985s, below 90s. |
-| Explicit instruction “dont push yet” | Kept final review and deliverables local. | No push, deployment or submission is part of this review. |
+| Initial instruction “dont push yet,” followed by explicit authorization to publish | Kept the review local until authorization, then published the completed branch and prepared immutable report links. | Publication is separate from application testing; no public app deployment or assignment-system upload is claimed. |
 
 The most consequential changes solve different problems: the pagination correction
 makes already-saved information findable; the fixed replies prevent two recognized
