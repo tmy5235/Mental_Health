@@ -2,11 +2,13 @@
 
 Trevor Michael Yuhaniak · IST 402 · November 2, 2026
 
+**Publication status: awaiting explicit approval to push the completed branch. The immutable links below are prepared but are not yet published or verified.**
+
 ## Submitted version
 
-Repository: https://github.com/tmy5235/Mental_Health
+Repository: [Mental_Health](https://github.com/tmy5235/Mental_Health)
 Branch: `codex/part3-final`
-Submitted commit: 9e3819006d56ae63379ceafe24ca677406d2c646 (application source; final evidence commit recorded after publication)
+Submitted commit: b61cf7a78c59d3b568d01fa4109110e8cdf027aa
 
 This final submission implements one complete paced-breathing skill in Vue,
 FastAPI and SQLite, with optional model assistance, saved conversations/sessions,
@@ -30,7 +32,7 @@ live tests still produced ambiguous pause-history language and generic crisis
 responses. Narrow fixed application replies now handle recognized past-pause
 questions and clear crisis phrases before any model call, accurately labeled
 App reply. Their phrase-matching limitations are explicit; support never depends
-on detection. See [final design and Part 1 changes](docs/design-pipeline.md).
+on detection. See [final design and Part 1 changes](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/design-pipeline.md).
 
 R1/D2 motivated the short fixed sequence; R2/D4 independent visible support;
 R3/R4 voluntary exits and choice; D1/D3/D5 explicit low-effort personalization;
@@ -42,29 +44,29 @@ questionnaire, automatic diagnosis/adaptation or additional techniques.
 ## Verification evidence
 
 - **54 automated tests pass:** 40 backend, 14 frontend; production build passes.
-  [Backend results](docs/part3/backend-final.txt), [frontend results](docs/part3/frontend-final.txt),
-  [build](docs/part3/build-final.txt).
+  [Backend results](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/backend-final.txt), [frontend results](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/frontend-final.txt),
+  [build](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/build-final.txt).
 - **18 fictional browser scenarios:** 17 pass; actual background-tab behavior is
-  inconclusive because automation did not hide the document. The [evaluation matrix](docs/part3/evaluation.md)
+  inconclusive because automation did not hide the document. The [evaluation matrix](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/evaluation.md)
   records expected/observed results and **three explicit cross-case checks** for
   support access, nonblocking exits, and application-controlled sequence.
-  [Raw observations](docs/part3/browser-results.json).
+  [Raw observations](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/browser-results.json).
 - **Timing:** 60.321 seconds from first observed exercise instruction to visible
   Finished; saved timestamps span 60.003 seconds, with 60 active seconds/six cycles.
   Entry and Start-to-instruction overhead are reported separately in the matrix.
   This run had no required typing, voluntary pauses or support visits.
 - **Persistence:** read-only SQLite inspection matches browser/API IDs and timing;
   integrity is `ok`, with no foreign-key errors or duplicate request/role pairs.
-  [Database evidence](docs/part3/database-check.json). Restart tests verify retained
+  [Database evidence](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/database-check.json). Restart tests verify retained
   records and idempotent retries.
 - **Repeated live evaluation:** four inputs repeated twice, eight exchanges/16
-  calls using `gpt-4.1-mini`. [Raw live replies](docs/part3/live-results.json) and
-  [assessments/variation](docs/part3/evaluation.md) are separate from mocked checks.
+  calls using `gpt-4.1-mini`. [Raw live replies](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/live-results.json) and
+  [assessments/variation](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/evaluation.md) are separate from mocked checks.
   Five replies met the criteria; three motivated the final fixed-rule refinement.
 - **Clean checkout:** fresh project-local installation, both servers, empty-database
   startup, mock conversation, reload, support and session saving verified using
-  the README. [Setup evidence](docs/part3/clean-checkout.md), [browser observations](docs/part3/clean-browser.json),
-  [run instructions](README.md).
+  the README. [Setup evidence](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/clean-checkout.md), [browser observations](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/clean-browser.json),
+  [run instructions](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/README.md).
 
 Routine and peer tests use mocks. The browser runner refuses a live backend.
 The application enforces a persistent maximum of 50 live calls per demo session,
@@ -73,12 +75,12 @@ used a stricter 16-call cap and made no additional paid calls for recordings.
 
 ## Demonstration and process screencast
 
-- [Finished application demonstration — 2:12](docs/part3/finished-demo.mp4): full
+- [Finished application demonstration — 2:12](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/finished-demo.mp4): full
   exercise at normal speed, personalization, persistence, saved real-model reply,
   fixed guidance, independent support, failure and recovery.
-- [Process screencast — 1:42](docs/part3/process-screencast.mp4): a real pagination
+- [Process screencast — 1:42](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/process-screencast.mp4): a real pagination
   failure, API evidence, resulting correction and explanation of generated code.
-- [Recording chapters and method](docs/part3/recordings.md).
+- [Recording chapters and method](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/recordings.md).
 
 The agent produced these real browser recordings with written explanatory captions,
 not spoken student narration. AI assistance is disclosed; the student should review
@@ -101,8 +103,8 @@ No real person in distress was tested and no support service was contacted.
 
 ## Process and AI disclosure
 
-[AI-USE.md](AI-USE.md) names tools/model identifiers and their roles.
-[Curated evidence log](docs/evidence.md) connects selected instructions, changes,
+[AI-USE.md](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/AI-USE.md) names tools/model identifiers and their roles.
+[Curated evidence log](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/evidence.md) connects selected instructions, changes,
 failed/revised approaches, tests and decisions. Credentials, private environment
 files and runtime databases are excluded. No code was copied from the earlier
 Expedia project; familiar architecture and development practices were reused.

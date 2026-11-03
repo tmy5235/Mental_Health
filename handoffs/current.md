@@ -30,6 +30,15 @@ Finished-app MP4 (2:12) and process screencast (1:42) contain actual browser
 captures with written commentary and a source-code explanation. No student voice
 or human participant testing is implied. See docs/part3/recordings.md.
 
+## Publication status
+
+Completed source/evidence commit: `b61cf7a78c59d3b568d01fa4109110e8cdf027aa`.
+Automatic approval review rejected the GitHub push because explicit permission
+to upload the branch/evidence/recordings was required. An approval question is
+pending with the user. Nothing has been pushed; report links are prepared but
+unverified/unpublished. Do not retry until the user approves. Local outputs contain
+report.md, both MP4s and a complete source/evidence ZIP.
+
 ## Boundaries and final delivery
 
 Final report/evidence publication hashes and anonymous-link checks are recorded
