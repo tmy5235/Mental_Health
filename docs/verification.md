@@ -89,3 +89,10 @@ or comprehensive accessibility conformance is claimed. The final branch has been
 pushed to the existing GitHub repository with explicit authorization. Publication
 link checks are a separate delivery check from application testing; the final
 report identifies the published checkpoint and linked evidence.
+
+## Publication verification
+
+All 32 anonymous HTTPS checks passed for the repository, submitted commit and
+report-linked artifacts, including both MP4 recordings. Text artifacts matched
+the local files byte-for-byte; media access/type and available size headers were
+checked. [Exact publication checks](part3/publication-links.json).

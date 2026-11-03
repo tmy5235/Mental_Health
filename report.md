@@ -6,10 +6,10 @@ Repository: [Mental_Health](https://github.com/tmy5235/Mental_Health)
 
 Final branch: `codex/part3-final`
 
-Submitted source/evidence commit: `722ec8e9446254f2da31bedd342886fe38f8d165`
+Submitted source/evidence commit: [743d3825220a754adbf9d12dd5e5fe1d1f5bdc29](https://github.com/tmy5235/Mental_Health/commit/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29)
 
-The report-only follow-up identifies this evaluated checkpoint; application source
-remains unchanged from `9e3819006d56ae63379ceafe24ca677406d2c646`.
+This checkpoint contains the evaluated application, final design, test evidence
+and recordings. The report and publication checks add no application changes.
 
 ## Completed solution
 
@@ -41,7 +41,7 @@ input. Narrow application-owned replies now handle recognized past-pause questio
 and clear crisis phrases before any provider call, labeled App reply. These rules
 do not establish comprehensive detection; unconditional support remains essential.
 
-The [final design](docs/design-pipeline.md) revisits Part 1 and maps every R1–R4 and
+The [final design](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/design-pipeline.md) revisits Part 1 and maps every R1–R4 and
 D1–D6 finding to an implemented choice and tradeoff. R1/D2 informed the short fixed
 sequence; R2/D4 independent visible support; R3/R4 voluntary exits and choice;
 D1/D3/D5 low-effort explicit personalization; D6 restrained presentation and neutral
@@ -53,10 +53,10 @@ fictional profile keep the implementation bounded.
 ## Verification and what it establishes
 
 - **54 automated tests pass:** 40 backend, 14 frontend; production build passes.
-  [Final verification and logs](docs/verification.md).
+  [Final verification and logs](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/verification.md).
 - **18 fictional scenarios have passing observations:** 17 automated passes plus
   a separate native Chrome background-tab check. The automated S15 result remains
-  inconclusive in the raw evidence. [Expected/observed matrix](docs/part3/evaluation.md)
+  inconclusive in the raw evidence. [Expected/observed matrix](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/evaluation.md)
   includes three explicit cross-case checks: independent support, nonblocking exit
   and application-owned sequence.
 - **Visible duration meets 90 seconds:** the final run measured 66.985 seconds
@@ -67,30 +67,30 @@ fictional profile keep the implementation bounded.
 - **Persistence is inspectable:** final SQLite/API/browser IDs and activity fields
   match; integrity is `ok`, with no foreign-key violations or duplicate request/role
   pairs. Restart and retry tests retain records without duplicating successful
-  exchanges. [Database evidence](docs/part3/final-review/database-check.json).
+  exchanges. [Database evidence](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/final-review/database-check.json).
 - **Clean setup works:** a fresh tracked-file checkout installed declared dependencies,
   started without a key or existing database, and passed mock-chat, reload, support
-  and session-save checks. [Clean-checkout evidence](docs/part3/clean-checkout.md).
+  and session-save checks. [Clean-checkout evidence](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/clean-checkout.md).
 - **Repeated live sample exposes variation:** four fictional inputs repeated twice,
   eight exchanges/16 calls using `gpt-4.1-mini`; five met criteria and three motivated
-  refinement. [Original replies](docs/part3/live-results.json) and
-  [assessments](docs/part3/evaluation.md) are separate from mocked regression checks.
+  refinement. [Original replies](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/live-results.json) and
+  [assessments](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/evaluation.md) are separate from mocked regression checks.
 
 Routine evaluation uses mocks. Both live RAG stages count toward a persistent
 50-call demonstration cap, followed by labeled mock fallback. The Part 3 sample
 used a stricter 16-call cap; final review and recordings added no paid calls.
-The [requirement coverage matrix](docs/part3/requirements.md) connects the supplied
+The [requirement coverage matrix](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/requirements.md) connects the supplied
 directions to implementation and evidence.
 
 ## Demonstration and process evidence
 
-- [Finished application demonstration — 2:12](docs/part3/finished-demo.mp4): full
+- [Finished application demonstration — 2:12](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/finished-demo.mp4): full
   normal-speed sequence, personalization, history, saved live-model contribution,
   fixed guidance, support, failure and recovery.
-- [Process screencast — 1:42](docs/part3/process-screencast.mp4): observed pagination
+- [Process screencast — 1:42](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/process-screencast.mp4): observed pagination
   failure, API evidence, corrected behavior and generated-source explanation.
-- [Chapters and recording method](docs/part3/recordings.md),
-  [curated process log](docs/evidence.md) and [AI-use disclosure](AI-USE.md).
+- [Chapters and recording method](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/recordings.md),
+  [curated process log](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/evidence.md) and [AI-use disclosure](https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AI-USE.md).
 
 These actual browser captures use agent-authored written captions and source
 explanation, with no spoken narration or independent human participant test.
@@ -113,6 +113,6 @@ support service was contacted and no clinical effectiveness is claimed.
 ## Submission artifacts
 
 The source, design, verification evidence and both recordings are published in the
-repository. The linked checkpoint preserves the evaluated implementation and its
-evidence. This report is the standalone assignment deliverable; the application
+repository. All linked artifacts were verified accessible without signing in.
+The linked checkpoint preserves the evaluated implementation and its evidence. This report is the standalone assignment deliverable; the application
 remains a localhost prototype, and no assignment-system upload is claimed.

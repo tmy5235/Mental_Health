@@ -1,0 +1,278 @@
+{
+  "checked_at_utc": "2026-11-03T04:57:31.365416+00:00",
+  "source_evidence_commit": "743d3825220a754adbf9d12dd5e5fe1d1f5bdc29",
+  "method": "Anonymous HTTPS requests without credentials; GitHub artifact pages and raw files. Text bytes compared with local source; video HEAD checks verified resource access/type and size when supplied.",
+  "results": [
+    {
+      "url": "https://github.com/tmy5235/Mental_Health",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/commit/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/commit/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AGENTS.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AGENTS.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AGENTS.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AGENTS.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "3943",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AI-USE.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AI-USE.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AI-USE.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/AI-USE.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "4494",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/README.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/README.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/README.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/README.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "11216",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/design-pipeline.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/design-pipeline.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/design-pipeline.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/design-pipeline.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "16630",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/evidence.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/evidence.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/evidence.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/evidence.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "5769",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/clean-checkout.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/clean-checkout.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/clean-checkout.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/clean-checkout.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "2630",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/evaluation.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/evaluation.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/evaluation.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/evaluation.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "12779",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/final-review/database-check.json",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/final-review/database-check.json",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/final-review/database-check.json",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/final-review/database-check.json",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "1160",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/finished-demo.mp4",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/finished-demo.mp4",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/finished-demo.mp4",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/finished-demo.mp4",
+      "content_type": "application/octet-stream",
+      "content_length": "1576063",
+      "expected_bytes": 1576063,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/live-results.json",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/live-results.json",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/live-results.json",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/live-results.json",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "18911",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/process-screencast.mp4",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/process-screencast.mp4",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/process-screencast.mp4",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/process-screencast.mp4",
+      "content_type": "application/octet-stream",
+      "content_length": "1324011",
+      "expected_bytes": 1324011,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/recordings.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/recordings.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/recordings.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/recordings.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "3109",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/requirements.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/requirements.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/requirements.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/part3/requirements.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "4111",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/verification.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/verification.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/verification.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/docs/verification.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "4951",
+      "matches_local_file": true,
+      "pass": true
+    },
+    {
+      "url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/report.md",
+      "status": 200,
+      "final_url": "https://github.com/tmy5235/Mental_Health/blob/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/report.md",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": null,
+      "pass": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/report.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/tmy5235/Mental_Health/743d3825220a754adbf9d12dd5e5fe1d1f5bdc29/report.md",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "7032",
+      "matches_local_file": true,
+      "pass": true
+    }
+  ]
+}

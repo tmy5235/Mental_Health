@@ -30,8 +30,9 @@ The user explicitly authorized pushing the complete Part 3 branch and making the
 report ready to submit, superseding the earlier hold. The final branch is published
 at the existing repository. The report uses immutable source/evidence links so it
 works as a standalone Markdown upload. Both the finished demonstration and required
-process screencast remain included. No public application hosting or assignment-system
-upload has occurred. Preserve the original working data and local configuration.
+process screencast remain included. All 32 anonymous publication checks passed; see
+[publication evidence](../docs/part3/publication-links.json). No public application
+hosting or assignment-system upload has occurred. Preserve the original working data and local configuration.
 
 ## Preserved boundaries
 
