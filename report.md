@@ -6,7 +6,10 @@ Repository: [Mental_Health](https://github.com/tmy5235/Mental_Health)
 
 Final branch: `codex/part3-final`
 
-Application source commit: `9e3819006d56ae63379ceafe24ca677406d2c646`
+Submitted source/evidence commit: `722ec8e9446254f2da31bedd342886fe38f8d165`
+
+The report-only follow-up identifies this evaluated checkpoint; application source
+remains unchanged from `9e3819006d56ae63379ceafe24ca677406d2c646`.
 
 ## Completed solution
 
