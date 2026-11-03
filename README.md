@@ -1,6 +1,6 @@
 # Breathing Room — paced breathing
 
-IST 402 · Local Part 2 coursework prototype · October 26, 2026
+IST 402 · Final Part 3 coursework prototype · November 2, 2026
 
 A simple Vue interface guides six cycles: four counts in, six out. Pause, Stop,
 still-text pacing and an independent crisis-support panel remain available.
@@ -8,18 +8,30 @@ FastAPI and SQLite save sessions, conversations, actual replies, request status
 and explicit display preferences. Optional chat retrieves scoped records through
 a two-stage SQL RAG pipeline.
 
-**Default/current mode: labeled mock replies.** Two live OpenAI exchanges were
-verified on October 26 using `gpt-4.1-mini` (four model calls), then the app was
-returned to mock mode for routine testing. Saved live replies keep their AI labels.
-The history answer included an unsupported pause claim; the prompt was tightened,
-but that change has not been live-retested. See [report.md](report.md).
+**Default mode: labeled mock replies.** The final evaluation used 18 fictional browser
+scenarios, repeatable backend/frontend tests, and eight live exchanges (16 model
+calls). The live results exposed ambiguous pause-history wording and weak crisis
+redirection. Narrow application-owned rules now answer recognized crisis phrases
+and past-pause questions before any model call; these are labeled **App reply ·
+fixed guidance**. They are not a distress detector. See [Part 3 evaluation](docs/part3/evaluation.md).
 
 This is a fictional coursework prototype, not therapy, diagnosis, monitoring or
 a public support service. Only fictional content belongs in its local database.
 
-## Run
+## Fresh checkout and run
 
-From the project root, use two terminals:
+Prerequisites: Python 3.14, Node.js 24/npm, and Git. The verified versions below
+are the tested environment, not a claim that all older versions work.
+
+```sh
+git clone --branch codex/part3-final https://github.com/tmy5235/Mental_Health.git
+cd Mental_Health
+python3 -m venv backend/.venv
+backend/.venv/bin/python -m pip install -r backend/requirements-lock.txt
+npm ci --prefix frontend
+```
+
+No API key or existing database is needed. Use two terminals from the project root:
 
 ```sh
 backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000
@@ -60,26 +72,18 @@ For repeatable peer testing, use `PROVIDER_MODE=mock` and restart. The mock adap
 is fixed demonstration logic (`demo-v1`), not an AI or a clinical classifier.
 Live requests send the question and selected fictional records to OpenAI.
 
-## Verified environment and installation
-
-Existing dependencies were installed with prior user approval. October 26 work
-installed no additional packages. HTTPX was moved from the dev manifest to runtime
-because the provider adapter now uses the already-installed library.
+## Verified environment
 
 - Python 3.14.7, SQLite 3.50.4, FastAPI 0.156.0, Uvicorn 0.54.0,
   HTTPX 0.28.1, Pydantic 2.14.1.
 - Node 24.18.1, npm 11.16.0, Vue 3.5.44, Vite 7.3.7,
-  @vitejs/plugin-vue 6.0.10.
+  @vitejs/plugin-vue 6.0.10; Playwright 1.64.1 for development-only browser checks.
+- Browser evaluation: installed Google Chrome 156.0.8078.80 on macOS.
 
-For a fresh environment, these are the installation commands used for this
-project. A separate clean-checkout installation is still unverified; follow
-AGENTS.md's installation-approval rule when acting as an agent.
-
-```sh
-python3 -m venv backend/.venv
-backend/.venv/bin/python -m pip install -r backend/requirements-lock.txt
-npm install --prefix frontend --cache /private/tmp/mental-health-npm-cache
-```
+Fresh installation creates project-local dependencies. No dependencies or secret
+files from the Part 2 checkout are required. npm reported pending optional install
+scripts; the installed Vite build and server worked without approving extra scripts.
+See [clean-checkout evidence](docs/part3/clean-checkout.md) for actual commands/results.
 
 ## Checks
 
@@ -105,7 +109,7 @@ not live API evidence.
   visible keyboard focus, 18px base text/optional 20px and still pacing by default.
 - Chat, History and Display settings are optional. Save only explicit choices.
 - Independent bundled support resources, labeled for the United States and
-  territories; verified October 26. External services require their own connection.
+  territories; verified November 2. External services require their own connection.
 - Records describe activity or attributed messages, never inferred emotional state.
 
 The chosen skill, R1–R4/D1–D6 mappings, alternatives, research sources, API contracts
@@ -127,6 +131,7 @@ backend/app/
   repository.py / chat_repository.py  Parameterized SQLite writes and reads
   retrieval.py             Finite SQL allowlist, ownership, read-only limits
   provider.py              Reviewed prompts, mock and OpenAI adapters
+  reply_policy.py          Narrow fixed replies before model use
   config.py                Explicit backend-only configuration
 backend/tests/             Temporary fictional data; no working-data reseeding
 frontend/tests/            Timing and HTTP contract checks
@@ -134,25 +139,72 @@ backend/setup_live.py      Private optional setup; no API call or overwrite
 data/app.sqlite3           Ignored runtime records, retained across restart
 ```
 
-## Boundaries and remaining work
+## Repeatable browser evaluation
 
-- Two live cases establish working integration, not reliable grounding across cases.
-  The revised pause-history instruction needs live evaluation in Part 3.
-- Unfinished exercise reloads reset without saving; Stop/finish records save normally.
-  Unconfirmed session/chat retries survive same-tab refresh through sessionStorage;
-  closing the tab can lose unsent content. Saved records remain in SQLite.
-- SQL supports five approved retrieval shapes, not arbitrary analytics. At most
-  five records/12,000 context characters reach answer generation. Answers can
-  still be inaccurate; citation validation does not prove semantic correctness.
-- Single fictional local profile, no accounts or production security/deployment.
-- Screen reader, OS reduced-motion changes, browser zoom/text-spacing overrides,
-  true hidden-tab triggering and clean checkout need further verification.
-- Figma, extra skills, history deletion and clinical evaluation are outside this increment.
-- Report publication requires a reviewed commit and push; Canvas upload remains manual.
+Use a **separate fictional database**: the browser suite inserts fixtures and
+saves sessions. Stop another API on port 8000, then run:
 
-[Part 2 report](report.md) · [Verification](docs/verification.md) ·
-[Process evidence](docs/evidence.md) · [AI disclosure](AI-USE.md) ·
-[Current handoff](handoffs/current.md)
+```sh
+backend/.venv/bin/python scripts/serve_mock.py --database data/evaluation.sqlite3
+```
+
+Start the Vue frontend in a second terminal. In a third:
+
+```sh
+node scripts/browser-evaluation.mjs
+```
+
+The runner uses installed macOS Google Chrome. Set `BROWSER_EXECUTABLE_PATH` to
+another compatible Chromium executable on other platforms. It refuses a live
+backend. Results/screenshots go to `docs/part3/`; preserve submitted evidence
+before rerunning. `SCENARIOS=S17,S18` runs selected checks. `HEADLESS=false`
+opens visible Chrome; browser automation did not establish a hidden document in
+either mode, so S15 is recorded as inconclusive rather than a passing auto-pause check.
+
+To reproduce the pagination regression on the final version:
+
+```sh
+node frontend/node_modules/playwright/cli.js install ffmpeg
+node scripts/chat-pagination-check.mjs
+```
+
+The `--baseline` option is only for the earlier Part 2 implementation and should
+fail its expected-old-behavior assertion on the corrected version. Recordings use
+real browser views with clearly labeled editorial captions. `scripts/record-demo.mjs`
+requires the fictional live-result conversations to be present in the served demo
+database; it is a recording script, not a fresh-install acceptance test.
+
+Optional paid evaluation is explicit:
+
+```sh
+backend/.venv/bin/python scripts/evaluate_live.py --allow-live --env-file /private/path/to/.env
+```
+
+It uses a separate fictional database, reserves at most 16 calls across reruns,
+and never prints credentials. The submitted raw live results are the original
+pre-rule observations, preserved unchanged. Do not overwrite them or interpret
+fixed-reply regression tests as further live-model success.
+
+## Boundaries
+
+- Narrow phrase rules can miss indirect crisis wording and match quoted/negated
+  text. Unknown-pause wording outside the rule can still receive a flawed model
+  answer. Independent support is always available; no risk score is produced.
+- SQL supports five approved retrieval shapes. Citation-ID validity does not
+  establish semantic truth. Live results cover only four inputs repeated twice.
+- Unfinished exercise refresh resets without saving, disclosed before Start.
+  Pending retries survive same-tab refresh but may be lost on tab closure.
+- Single fictional local profile; no accounts, history deletion, clinical
+  evaluation, or public support-service deployment.
+- Real OS reduced-motion changes, screen-reader speech, native browser zoom,
+  actual hidden-tab behavior, and another operating system remain unverified.
+- Mock versus fixed versus live replies are explicitly labeled. Stored activity
+  never establishes feelings or improvement.
+
+[Part 3 report](report.md) · [Final evaluation](docs/part3/evaluation.md) ·
+[Recordings](docs/part3/recordings.md) · [Process evidence](docs/evidence.md) ·
+[AI disclosure](AI-USE.md) · [Current handoff](handoffs/current.md)
 
 The earlier [published Part 1 design](https://github.com/tmy5235/Mental_Health/tree/f7b91254907a3eb18b22dc7d58b82a89960c63cb)
-is preserved. No source from the previous Expedia project was copied.
+and [Part 2 submission](https://github.com/tmy5235/Mental_Health/blob/e96469e/report.md)
+remain available. No source from the Expedia project was copied.

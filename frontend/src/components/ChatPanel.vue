@@ -48,17 +48,18 @@ async function loadConversations(more = false) {
     listError.value = ''
   } catch { if (alive) listError.value = 'Saved chats could not be loaded.' }
 }
-async function load(pageOffset = 0) {
+async function load(pageOffset = null) {
   const token = ++generation
   loadError.value = ''
-  if (!conversationId.value) { messages.value = []; loading.value = false; return }
+  if (!conversationId.value) { messages.value = []; offset.value = 0; hasNext.value = false; loading.value = false; return }
   loading.value = true
   try {
-    const data = await request(`/conversations/${conversationId.value}?limit=51&offset=${pageOffset}`)
+    const pageQuery = pageOffset === null ? 'latest=true' : `offset=${pageOffset}`
+    const data = await request(`/conversations/${conversationId.value}?limit=50&${pageQuery}`)
     if (token !== generation || !alive) return
     messages.value = data.messages.slice(0, 50)
-    offset.value = pageOffset
-    hasNext.value = data.messages.length > 50
+    offset.value = data.offset
+    hasNext.value = data.offset + data.messages.length < data.total
     if (pending.value && data.messages.some(m => m.request_id === pending.value.id && m.status === 'completed')) {
       pending.value = null
       sendError.value = ''
@@ -96,13 +97,13 @@ async function send(item = null) {
     text.value = ''
     remember()
     emit('saved')
-    await load(offset.value)
+    await load()
     await loadConversations()
     await refreshHealth()
   } catch (error) {
     if (!alive) return
     sendError.value = error.message
-    await load(offset.value)
+    await load()
     await loadConversations()
   } finally { if (alive) busy.value = false }
 }
@@ -144,12 +145,12 @@ onBeforeUnmount(() => { alive = false; generation++ })
     </div>
     <ol class="messages" aria-label="Saved messages, oldest first">
       <li v-for="message in messages" :key="message.id" :class="['message', message.role]">
-        <div class="message-label">{{ message.role === 'user' ? 'You · fictional' : message.provider_mode === 'mock' ? 'Demo reply · not live AI' : 'AI reply' }}</div>
+        <div class="message-label">{{ message.role === 'user' ? 'You · fictional' : message.provider_mode === 'local' ? 'App reply · fixed guidance' : message.provider_mode === 'mock' ? 'Demo reply · not live AI' : 'AI reply' }}</div>
         <p class="message-content">{{ message.content }}</p>
         <div class="message-meta"><time :datetime="message.created_at">{{ date(message.created_at) }}</time><span>Saved</span></div>
         <p v-if="message.role === 'user' && message.status !== 'completed'" class="small-note">{{ message.status === 'pending' ? 'Reply pending.' : 'Reply failed.' }}</p>
         <button v-if="message.role === 'user' && message.status === 'failed' && !pending" class="text-button" :disabled="busy" @click="retryMessage(message)">Retry reply</button>
-        <details class="record-details"><summary>Record details</summary><p>Message <code>{{ message.id }}</code></p><p>Conversation <code>{{ message.conversation_id }}</code></p><p>Request <code>{{ message.request_id }}</code> · {{ message.status }}</p><p v-if="message.error_code">{{ message.error_code }}</p><p v-if="message.role === 'assistant'">{{ message.model }} · {{ message.retrieval_status === 'empty' ? 'No matching records' : 'History retrieved' }}</p><p v-if="message.record_ids.length">Sources: <code v-for="id in message.record_ids" :key="id">{{ id }} </code></p></details>
+        <details class="record-details"><summary>Record details</summary><p>Message <code>{{ message.id }}</code></p><p>Conversation <code>{{ message.conversation_id }}</code></p><p>Request <code>{{ message.request_id }}</code> · {{ message.status }}</p><p v-if="message.error_code">{{ message.error_code }}</p><p v-if="message.role === 'assistant'">{{ message.model }} · {{ message.retrieval_status === 'not_requested' ? 'Fixed app response · no retrieval' : message.retrieval_status === 'empty' ? 'No matching records' : 'History retrieved' }}</p><p v-if="message.record_ids.length">Sources: <code v-for="id in message.record_ids" :key="id">{{ id }} </code></p></details>
       </li>
     </ol>
     <div v-if="offset || hasNext" class="pagination"><button :disabled="!offset || loading || busy" @click="load(Math.max(0, offset - 50))">Earlier messages</button><button :disabled="!hasNext || loading || busy" @click="load(offset + 50)">Later messages</button></div>

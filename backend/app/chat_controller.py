@@ -2,6 +2,7 @@ import sqlite3
 from .chat_models import ChatError
 from .provider import MockProvider, OpenAIProvider, Answer
 from .retrieval import retrieve
+from .reply_policy import reviewed_reply
 
 
 class ChatController:
@@ -15,6 +16,11 @@ class ChatController:
         if attempt is None:
             return repo.exchange(conversation_id, request_id)
         try:
+            fixed = reviewed_reply(content)
+            if fixed is not None:
+                repo.set_provider(request_id, attempt, 'local', 'reviewed-rules-v1', False)
+                repo.finish(conversation_id, request_id, attempt, fixed, [], 'not_requested')
+                return repo.exchange(conversation_id, request_id)
             provider, fallback = self.provider, False
             repo.set_provider(request_id, attempt, provider.mode, provider.model, fallback)
             if provider.mode == "openai":

@@ -163,6 +163,22 @@ class ChatTests(unittest.TestCase):
         self.assertEqual(page, rows[2:])
         self.assertEqual(self.client.get('/api/conversations').json()['conversations'][0]['id'], self.conversation)
 
+    def test_latest_history_page_and_total_preserve_manual_pagination(self):
+        for i in range(26):
+            self.client.put(f'/api/conversations/{self.conversation}/messages/{uuid4()}',
+                            json={'content': f'Fictional question {i}: how does breathing work?'})
+        first = self.client.get(f'/api/conversations/{self.conversation}?limit=50').json()
+        latest = self.client.get(f'/api/conversations/{self.conversation}?limit=50&latest=true').json()
+        self.assertEqual((first['total'], len(first['messages']), first['offset']), (52, 50, 0))
+        self.assertEqual((latest['total'], len(latest['messages']), latest['offset']), (52, 2, 50))
+        self.assertIn('question 25', latest['messages'][0]['content'])
+        self.assertEqual(len({m['id'] for m in first['messages'] + latest['messages']}), 52)
+        for i in range(24):
+            self.client.put(f'/api/conversations/{self.conversation}/messages/{uuid4()}',
+                            json={'content': f'Fictional boundary {i}: how does breathing work?'})
+        boundary = self.client.get(f'/api/conversations/{self.conversation}?limit=50&latest=true').json()
+        self.assertEqual((boundary['total'], boundary['offset'], len(boundary['messages'])), (100, 50, 50))
+
     def test_crisis_and_off_topic_mock_do_not_claim_clinical_help(self):
         body = self.submit('Fictional Alex says: I want to hurt myself.').json()
         self.assertIn('Crisis support', body['messages'][1]['content'])

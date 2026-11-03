@@ -30,10 +30,10 @@ class MessageRecord(BaseModel):
     sequence: int
     status: Literal["pending", "failed", "completed"]
     error_code: str | None
-    provider_mode: Literal["mock", "openai"]
+    provider_mode: Literal["mock", "openai", "local"]
     model: str
     record_ids: list[str]
-    retrieval_status: Literal["selected", "empty"] | None
+    retrieval_status: Literal["selected", "empty", "not_requested"] | None
 
 
 class ConversationSummary(BaseModel):
@@ -54,6 +54,7 @@ class ConversationHistory(BaseModel):
     messages: list[MessageRecord]
     limit: int
     offset: int
+    total: int
 
 
 class Exchange(BaseModel):
@@ -61,7 +62,7 @@ class Exchange(BaseModel):
     conversation_id: UUID
     request_id: UUID
     messages: list[MessageRecord]
-    provider_mode: Literal["mock", "openai"]
+    provider_mode: Literal["mock", "openai", "local"]
     budget_fallback: bool = False
 
 

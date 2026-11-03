@@ -106,8 +106,11 @@ def create_app(database_path: Path = DEFAULT_DATABASE, settings=None, provider=N
         return {"conversations": repository.conversations(limit, offset), "limit": limit, "offset": offset}
 
     @app.get("/api/conversations/{conversation_id}", response_model=ConversationHistory)
-    def messages(conversation_id: UUID, limit: int = Query(50, ge=1, le=100), offset: int = Query(0, ge=0, le=100000)):
-        return {"id": str(conversation_id), "messages": repository.messages(str(conversation_id), limit, offset), "limit": limit, "offset": offset}
+    def messages(conversation_id: UUID, limit: int = Query(50, ge=1, le=100), offset: int = Query(0, ge=0, le=100000), latest: bool = False):
+        total = repository.message_count(str(conversation_id))
+        if latest:
+            offset = max(0, (total - 1) // limit) * limit
+        return {"id": str(conversation_id), "messages": repository.messages(str(conversation_id), limit, offset), "limit": limit, "offset": offset, "total": total}
 
     @app.get("/api/preferences", response_model=SavedPreferences)
     def preferences():

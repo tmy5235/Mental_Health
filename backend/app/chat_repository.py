@@ -143,6 +143,13 @@ class ChatRepository(SessionRepository):
                 "messages": self.messages(conversation_id, request_id=request_id),
                 "provider_mode": row["provider_mode"], "budget_fallback": bool(row["budget_fallback"])}
 
+    def message_count(self, conversation_id):
+        with closing(self.connect()) as db:
+            return db.execute(
+                "SELECT count(*) FROM messages WHERE conversation_id = ? AND profile_id = ?",
+                (conversation_id, PROFILE_ID),
+            ).fetchone()[0]
+
     def conversations(self, limit, offset):
         with closing(self.connect()) as db:
             return [dict(row) for row in db.execute("SELECT id, created_at, updated_at, title FROM conversations WHERE profile_id = ? ORDER BY updated_at DESC, id DESC LIMIT ? OFFSET ?", (PROFILE_ID, limit, offset))]
