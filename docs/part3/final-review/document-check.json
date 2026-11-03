@@ -1,0 +1,614 @@
+{
+  "markdown_files": [
+    "AGENTS.md",
+    "AI-USE.md",
+    "README.md",
+    "docs/design-pipeline.md",
+    "docs/design.md",
+    "docs/evidence.md",
+    "docs/part1-checklist.md",
+    "docs/part3/clean-checkout.md",
+    "docs/part3/evaluation.md",
+    "docs/part3/recordings.md",
+    "docs/part3/requirements.md",
+    "docs/verification.md",
+    "handoffs/current.md",
+    "report.md"
+  ],
+  "markdown_count": 14,
+  "local_link_count": 118,
+  "errors": [],
+  "scope": "Local links, code-fence balance, obsolete classroom wording, excluded runtime paths and credential-shaped text. External final-version URLs are unpublished and not verified.",
+  "links": [
+    {
+      "source": "AI-USE.md",
+      "target": "docs/design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "AI-USE.md",
+      "target": "docs/evidence.md",
+      "exists": true
+    },
+    {
+      "source": "AI-USE.md",
+      "target": "docs/part2-live-evidence.json",
+      "exists": true
+    },
+    {
+      "source": "AI-USE.md",
+      "target": "docs/part3/live-results.json",
+      "exists": true
+    },
+    {
+      "source": "AI-USE.md",
+      "target": "docs/part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/part3/clean-checkout.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/verification.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/part3/requirements.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "report.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/part3/recordings.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/evidence.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "AI-USE.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "handoffs/current.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design-pipeline.md",
+      "target": "part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design-pipeline.md",
+      "target": "part3/requirements.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design-pipeline.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design-pipeline.md",
+      "target": "part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design-pipeline.md",
+      "target": "../AI-USE.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design.md",
+      "target": "design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "docs/design.md",
+      "target": "part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "../AI-USE.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/pagination-before.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/pagination-after.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/process-screencast.mp4",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/live-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/final-review/browser-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/final-review/native-browser.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "verification.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/clean-checkout.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence.md",
+      "target": "part3/requirements.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part1-checklist.md",
+      "target": "design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part1-checklist.md",
+      "target": "part3/requirements.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-browser.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-home.png",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-install-python.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-install-node.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-tests-backend.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-tests-frontend.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/clean-checkout.md",
+      "target": "clean-build.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/backend.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/frontend.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/build.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/database-check.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/browser-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "browser-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/native-browser.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "../../scripts/browser-evaluation.mjs",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "live-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/database-check.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "browser-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "database-check.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "pagination-before.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "pagination-after.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "recordings.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/evaluation.md",
+      "target": "final-review/native-browser.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "../../AI-USE.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "finished-demo.mp4",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "process-screencast.mp4",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "pagination-before.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "pagination-after.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "../../scripts/chat-pagination-check.mjs",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/recordings.md",
+      "target": "video-metadata.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../../README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "clean-checkout.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "final-review/browser-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "live-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "final-review/database-check.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../part1-checklist.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "final-review/native-browser.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../verification.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../evidence.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "live-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "finished-demo.mp4",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "process-screencast.mp4",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "recordings.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../../AI-USE.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../evidence.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../../report.md",
+      "exists": true
+    },
+    {
+      "source": "docs/part3/requirements.md",
+      "target": "../../handoffs/current.md",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/final-review/backend.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/final-review/frontend.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/final-review/build.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/final-review/database-check.json",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/database-check.json",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/clean-checkout.md",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/live-results.json",
+      "exists": true
+    },
+    {
+      "source": "docs/verification.md",
+      "target": "part3/recordings.md",
+      "exists": true
+    },
+    {
+      "source": "handoffs/current.md",
+      "target": "../docs/part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "handoffs/current.md",
+      "target": "../docs/part3/requirements.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/design-pipeline.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/verification.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/final-review/database-check.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/clean-checkout.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/live-results.json",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/evaluation.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/requirements.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/finished-demo.mp4",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/process-screencast.mp4",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/part3/recordings.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "docs/evidence.md",
+      "exists": true
+    },
+    {
+      "source": "report.md",
+      "target": "AI-USE.md",
+      "exists": true
+    }
+  ]
+}

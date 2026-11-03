@@ -6,7 +6,7 @@ import { randomUUID } from 'node:crypto'
 const base = process.env.APP_URL || 'http://127.0.0.1:5173'
 const preflight = await (await fetch(`${base}/api/health`)).json()
 if (preflight.provider_mode !== 'mock') throw new Error('Routine browser checks require a mock backend; no live calls were attempted.')
-const output = new URL('../docs/part3/', import.meta.url)
+const output = new URL(process.env.EVIDENCE_DIR || '../docs/part3/', import.meta.url)
 await mkdir(output, { recursive: true })
 const browser = await chromium.launch({ executablePath: process.env.BROWSER_EXECUTABLE_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: process.env.HEADLESS !== 'false' })
 const results = []

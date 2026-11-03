@@ -1,0 +1,15 @@
+{
+  "scenario": "S15",
+  "date_local": "2026-11-02",
+  "browser": "Google Chrome 156.0.8078.80, Guest window on macOS",
+  "url": "http://127.0.0.1:5174/",
+  "method": "Native computer-use controls and accessibility-tree/screenshot observations; no synthetic visibility events.",
+  "steps": [
+    "Started the isolated mock app exercise; observed Cycle 1/6, 60s left, count 4, Pause and Stop.",
+    "Opened a real new Chrome tab with Command+T; accessibility tree showed the exercise tab unselected and New Tab selected.",
+    "On returning to the exercise, observed Cycle 1/6, 58s left, count 2, Paused. Take your time., Resume and Stop.",
+    "A subsequent full accessibility snapshot and screenshot retained the same paused values."
+  ],
+  "result": "PASS: native background-tab interruption led to a paused return state without automatic resumption.",
+  "boundary": "Supplemental observation, not a successful automated visibility test. The tool reported intervening window state change before a requested return-tab click, so the return action is not attributed to that click. Resume activation in this native follow-up was not established; S02/S10 separately verify resume controls. No exact native pause duration or pause-event persistence is claimed."
+}

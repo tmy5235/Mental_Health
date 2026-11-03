@@ -2,113 +2,114 @@
 
 Trevor Michael Yuhaniak · IST 402 · November 2, 2026
 
-**Publication status: awaiting explicit approval to push the completed branch. The immutable links below are prepared but are not yet published or verified.**
-
-## Submitted version
-
 Repository: [Mental_Health](https://github.com/tmy5235/Mental_Health)
-Branch: `codex/part3-final`
-Submitted commit: b61cf7a78c59d3b568d01fa4109110e8cdf027aa
 
-This final submission implements one complete paced-breathing skill in Vue,
-FastAPI and SQLite, with optional model assistance, saved conversations/sessions,
-useful history, explicit saved preferences and independent crisis-support access.
-It remains a localhost-only coursework prototype tested with fictional scenarios.
-It does not diagnose, provide therapy, imply monitoring, or establish effectiveness.
+Final branch: `codex/part3-final`
 
-## What is complete and what changed
+Application source commit: `9e3819006d56ae63379ceafe24ca677406d2c646`
 
-The exercise provides six cycles of four counts in/six counts out, with optional
-motion, still text, Pause, Resume and Stop. Preferences are remembered but remain
-changeable/resettable; starting does not require setup, chat or disclosure. History
-shows actual saved outcomes/durations, ordered messages and record IDs. Model calls
-use reviewed skill context and bounded, scoped, read-only SQL retrieval. Application
-code owns sequence, exits, persistence and the support panel.
+## Completed solution
 
-Part 3 testing changed two behaviors. First, a long chat could successfully save
-new replies while leaving them offscreen. The final view opens the latest message
-page after Send, with manual earlier/later navigation retained. Second, repeated
-live tests still produced ambiguous pause-history language and generic crisis
-responses. Narrow fixed application replies now handle recognized past-pause
-questions and clear crisis phrases before any model call, accurately labeled
-App reply. Their phrase-matching limitations are explicit; support never depends
-on detection. See [final design and Part 1 changes](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/design-pipeline.md).
+Breathing Room implements one complete paced-breathing skill in Vue, FastAPI and
+SQLite, with optional contextual model interaction, saved conversations/sessions,
+useful history, explicit preferences and independent crisis-support access. It is
+a localhost assignment prototype for fictional evaluation, not therapy, diagnosis,
+monitoring or a public support service.
 
-R1/D2 motivated the short fixed sequence; R2/D4 independent visible support;
-R3/R4 voluntary exits and choice; D1/D3/D5 explicit low-effort personalization;
-D6 restrained presentation and neutral wording. Saving choices reduces repeated
-configuration but supplies no reliable distress estimate. We retained one skill
-and disclosed unfinished-refresh behavior instead of expanding scope into a
-questionnaire, automatic diagnosis/adaptation or additional techniques.
+The central design problem was to provide a usable short sequence without adding
+mandatory disclosure, configuration or model waiting. Start immediately begins six
+cycles of four counts in and six counts out. Pause, Resume and Stop preserve user
+control; still-text pacing, optional motion and larger text are remembered and
+resettable. History presents actual activity and attributed messages, with stable
+IDs and ordered pagination. It does not infer feelings or improvement.
 
-## Verification evidence
+The model explains reviewed skill material and uses bounded, scoped, read-only SQL
+retrieval to answer factual history questions. Application code owns sequence,
+exits, writes and bundled support. Neither a classifier nor a successful model
+response is required to open Crisis support.
+
+## Problems resolved and design decisions
+
+Part 3 resolved two observed failures. A long conversation saved a new reply while
+leaving it offscreen; the corrected interface opens the latest page after Send/open
+and retains Earlier/Later navigation. Separately, repeated live responses still
+used ambiguous pause-history language and generic descriptions for crisis-related
+input. Narrow application-owned replies now handle recognized past-pause questions
+and clear crisis phrases before any provider call, labeled App reply. These rules
+do not establish comprehensive detection; unconditional support remains essential.
+
+The [final design](docs/design-pipeline.md) revisits Part 1 and maps every R1–R4 and
+D1–D6 finding to an implemented choice and tradeoff. R1/D2 informed the short fixed
+sequence; R2/D4 independent visible support; R3/R4 voluntary exits and choice;
+D1/D3/D5 low-effort explicit personalization; D6 restrained presentation and neutral
+language. Mandatory setup and inferred-state tracking were rejected. Display settings
+collapse while navigation remains visible. Unfinished refresh is explicitly unsaved,
+rather than inventing an interrupted/completed outcome. One skill and a single
+fictional profile keep the implementation bounded.
+
+## Verification and what it establishes
 
 - **54 automated tests pass:** 40 backend, 14 frontend; production build passes.
-  [Backend results](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/backend-final.txt), [frontend results](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/frontend-final.txt),
-  [build](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/build-final.txt).
-- **18 fictional browser scenarios:** 17 pass; actual background-tab behavior is
-  inconclusive because automation did not hide the document. The [evaluation matrix](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/evaluation.md)
-  records expected/observed results and **three explicit cross-case checks** for
-  support access, nonblocking exits, and application-controlled sequence.
-  [Raw observations](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/browser-results.json).
-- **Timing:** 60.321 seconds from first observed exercise instruction to visible
-  Finished; saved timestamps span 60.003 seconds, with 60 active seconds/six cycles.
-  Entry and Start-to-instruction overhead are reported separately in the matrix.
-  This run had no required typing, voluntary pauses or support visits.
-- **Persistence:** read-only SQLite inspection matches browser/API IDs and timing;
-  integrity is `ok`, with no foreign-key errors or duplicate request/role pairs.
-  [Database evidence](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/database-check.json). Restart tests verify retained
-  records and idempotent retries.
-- **Repeated live evaluation:** four inputs repeated twice, eight exchanges/16
-  calls using `gpt-4.1-mini`. [Raw live replies](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/live-results.json) and
-  [assessments/variation](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/evaluation.md) are separate from mocked checks.
-  Five replies met the criteria; three motivated the final fixed-rule refinement.
-- **Clean checkout:** fresh project-local installation, both servers, empty-database
-  startup, mock conversation, reload, support and session saving verified using
-  the README. [Setup evidence](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/clean-checkout.md), [browser observations](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/clean-browser.json),
-  [run instructions](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/README.md).
+  [Final verification and logs](docs/verification.md).
+- **18 fictional scenarios have passing observations:** 17 automated passes plus
+  a separate native Chrome background-tab check. The automated S15 result remains
+  inconclusive in the raw evidence. [Expected/observed matrix](docs/part3/evaluation.md)
+  includes three explicit cross-case checks: independent support, nonblocking exit
+  and application-owned sequence.
+- **Visible duration meets 90 seconds:** the final run measured 66.985 seconds
+  from first instruction to visible Finished, including observed delay. Saved
+  records show 60 active seconds/six cycles. Start-to-instruction was 47.5ms;
+  scripted entry was 71.2ms, reported separately. No voluntary pauses or support
+  visits occurred. The original visible run was 60.321 seconds.
+- **Persistence is inspectable:** final SQLite/API/browser IDs and activity fields
+  match; integrity is `ok`, with no foreign-key violations or duplicate request/role
+  pairs. Restart and retry tests retain records without duplicating successful
+  exchanges. [Database evidence](docs/part3/final-review/database-check.json).
+- **Clean setup works:** a fresh tracked-file checkout installed declared dependencies,
+  started without a key or existing database, and passed mock-chat, reload, support
+  and session-save checks. [Clean-checkout evidence](docs/part3/clean-checkout.md).
+- **Repeated live sample exposes variation:** four fictional inputs repeated twice,
+  eight exchanges/16 calls using `gpt-4.1-mini`; five met criteria and three motivated
+  refinement. [Original replies](docs/part3/live-results.json) and
+  [assessments](docs/part3/evaluation.md) are separate from mocked regression checks.
 
-Routine and peer tests use mocks. The browser runner refuses a live backend.
-The application enforces a persistent maximum of 50 live calls per demo session,
-counting both RAG stages, then switches to labeled mock replies. This evaluation
-used a stricter 16-call cap and made no additional paid calls for recordings.
+Routine evaluation uses mocks. Both live RAG stages count toward a persistent
+50-call demonstration cap, followed by labeled mock fallback. The Part 3 sample
+used a stricter 16-call cap; final review and recordings added no paid calls.
+The [requirement coverage matrix](docs/part3/requirements.md) connects the supplied
+directions to implementation and evidence.
 
-## Demonstration and process screencast
+## Demonstration and process evidence
 
-- [Finished application demonstration — 2:12](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/finished-demo.mp4): full
-  exercise at normal speed, personalization, persistence, saved real-model reply,
-  fixed guidance, independent support, failure and recovery.
-- [Process screencast — 1:42](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/process-screencast.mp4): a real pagination
-  failure, API evidence, resulting correction and explanation of generated code.
-- [Recording chapters and method](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/part3/recordings.md).
+- [Finished application demonstration — 2:12](docs/part3/finished-demo.mp4): full
+  normal-speed sequence, personalization, history, saved live-model contribution,
+  fixed guidance, support, failure and recovery.
+- [Process screencast — 1:42](docs/part3/process-screencast.mp4): observed pagination
+  failure, API evidence, corrected behavior and generated-source explanation.
+- [Chapters and recording method](docs/part3/recordings.md),
+  [curated process log](docs/evidence.md) and [AI-use disclosure](AI-USE.md).
 
-The agent produced these real browser recordings with written explanatory captions,
-not spoken student narration. AI assistance is disclosed; the student should review
-and understand the code and recordings before submission.
+These actual browser captures use agent-authored written captions and source
+explanation, with no spoken narration or independent human participant test.
 
-## Surprising finding and limits
+## Surprising finding and remaining limits
 
-Even an explicit no-pause-inference prompt produced ambiguous wording, and a crisis
-prompt produced general app descriptions. The final narrow rules guarantee their
-own wording, not broad crisis detection or clinical safety. Tests show fixed replies
-work with a failing provider, use no calls, and save/replay correctly. These are
-application checks, not additional live-model success claims.
+An explicit prompt against pause inference still produced ambiguous wording, and
+both crisis-input repeats led with general app descriptions. The fixed rules address
+those recognized cases deterministically; they do not make arbitrary model answers
+reliable. Tests verify that fixed replies work with a failing provider, use zero
+calls and save/replay correctly. This is application evidence, not another successful
+live-model sample. Valid record IDs do not establish semantic truth.
 
-Untested limitations include native hidden-tab behavior, full screen-reader speech,
-actual OS reduced-motion changes, browser zoom and another operating system.
-Phrase rules can miss indirect language and match quoted/negated text. Other model
-answers may remain unsupported despite valid record IDs. Unfinished refresh is
-unsaved by design and disclosed before Start; closing a tab can lose unsent retries.
-No real person in distress was tested and no support service was contacted.
+Phrase rules can miss indirect language and match quoted/negated text. Full
+screen-reader speech, native zoom, actual OS reduced-motion changes and another
+operating system remain untested. Unfinished exercise refresh is unsaved; closing
+a tab can lose pending retries. No real person in distress was tested, no external
+support service was contacted and no clinical effectiveness is claimed.
 
-## Process and AI disclosure
+## Submission artifacts
 
-[AI-USE.md](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/AI-USE.md) names tools/model identifiers and their roles.
-[Curated evidence log](https://github.com/tmy5235/Mental_Health/blob/b61cf7a78c59d3b568d01fa4109110e8cdf027aa/docs/evidence.md) connects selected instructions, changes,
-failed/revised approaches, tests and decisions. Credentials, private environment
-files and runtime databases are excluded. No code was copied from the earlier
-Expedia project; familiar architecture and development practices were reused.
-
-Upload this `report.md` after reviewing the code, evidence and captioned recordings.
-This report addresses the supplied assignment overview; no Canvas submission has
-been made by the agent.
+The linked design, evidence, code and recordings are included in the complete local
+source package. This final branch remains unpublished at the author's direction;
+relative links are usable within that package. Repository publication and upload
+to the assignment system have not occurred for this final version.

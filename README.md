@@ -1,6 +1,6 @@
 # Breathing Room — paced breathing
 
-IST 402 · Final Part 3 coursework prototype · November 2, 2026
+IST 402 · Final Part 3 assignment prototype · November 2, 2026
 
 A simple Vue interface guides six cycles: four counts in, six out. Pause, Stop,
 still-text pacing and an independent crisis-support panel remain available.
@@ -15,7 +15,7 @@ redirection. Narrow application-owned rules now answer recognized crisis phrases
 and past-pause questions before any model call; these are labeled **App reply ·
 fixed guidance**. They are not a distress detector. See [Part 3 evaluation](docs/part3/evaluation.md).
 
-This is a fictional coursework prototype, not therapy, diagnosis, monitoring or
+This is a fictional-use assignment prototype, not therapy, diagnosis, monitoring or
 a public support service. Only fictional content belongs in its local database.
 
 ## Fresh checkout and run
@@ -23,9 +23,10 @@ a public support service. Only fictional content belongs in its local database.
 Prerequisites: Python 3.14, Node.js 24/npm, and Git. The verified versions below
 are the tested environment, not a claim that all older versions work.
 
+From the extracted submission or local repository root (the final branch is not
+yet published):
+
 ```sh
-git clone --branch codex/part3-final https://github.com/tmy5235/Mental_Health.git
-cd Mental_Health
 python3 -m venv backend/.venv
 backend/.venv/bin/python -m pip install -r backend/requirements-lock.txt
 npm ci --prefix frontend
@@ -66,9 +67,9 @@ validity. A successful reply labeled **AI reply** is required to verify live use
 API usage may incur charges; two calls are reserved per live exchange, with a
 persistent 50-call cap for the configured `DEMO_SESSION_ID`, then labeled mock
 fallback. Keep that ID unchanged during one demonstration. Failed/unused reserved
-calls count conservatively. Four live calls were used in the Part 2 demonstration; replaying saved IDs added none.
+calls count conservatively. The recorded evaluations used four calls in Part 2 and 16 in Part 3; replaying saved IDs added none. No further paid calls were used for final review.
 
-For repeatable peer testing, use `PROVIDER_MODE=mock` and restart. The mock adapter
+For repeatable evaluation, use `PROVIDER_MODE=mock` and restart. The mock adapter
 is fixed demonstration logic (`demo-v1`), not an AI or a clinical classifier.
 Live requests send the question and selected fictional records to OpenAI.
 
@@ -151,15 +152,17 @@ backend/.venv/bin/python scripts/serve_mock.py --database data/evaluation.sqlite
 Start the Vue frontend in a second terminal. In a third:
 
 ```sh
-node scripts/browser-evaluation.mjs
+EVIDENCE_DIR=../docs/part3/new-evaluation/ node scripts/browser-evaluation.mjs
 ```
 
 The runner uses installed macOS Google Chrome. Set `BROWSER_EXECUTABLE_PATH` to
 another compatible Chromium executable on other platforms. It refuses a live
-backend. Results/screenshots go to `docs/part3/`; preserve submitted evidence
-before rerunning. `SCENARIOS=S17,S18` runs selected checks. `HEADLESS=false`
+backend. EVIDENCE_DIR is resolved relative to `scripts/`; the command above writes
+to `docs/part3/new-evaluation/`. Without it, the default is `docs/part3/`.
+Always use a new output directory to preserve submitted evidence. `SCENARIOS=S17,S18` runs selected checks. `HEADLESS=false`
 opens visible Chrome; browser automation did not establish a hidden document in
-either mode, so S15 is recorded as inconclusive rather than a passing auto-pause check.
+either mode, so the automated S15 result remains inconclusive. A separate native Chrome
+check verified the paused return state; see the final evaluation.
 
 To reproduce the pagination regression on the final version:
 
@@ -197,9 +200,15 @@ fixed-reply regression tests as further live-model success.
 - Single fictional local profile; no accounts, history deletion, clinical
   evaluation, or public support-service deployment.
 - Real OS reduced-motion changes, screen-reader speech, native browser zoom,
-  actual hidden-tab behavior, and another operating system remain unverified.
+  and another operating system remain unverified. Native Chrome background-tab
+  pausing was verified separately from browser automation.
 - Mock versus fixed versus live replies are explicitly labeled. Stored activity
   never establishes feelings or improvement.
+
+Final review: **54 automated tests and production build pass; 17 automated browser
+scenarios pass, with S15 verified separately in native Chrome.** All 18 scenarios
+have passing observations across those methods. The final visible exercise ran
+66.985 seconds, within the 90-second requirement. See [requirement coverage](docs/part3/requirements.md).
 
 [Part 3 report](report.md) · [Final evaluation](docs/part3/evaluation.md) ·
 [Recordings](docs/part3/recordings.md) · [Process evidence](docs/evidence.md) ·

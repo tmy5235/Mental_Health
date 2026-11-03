@@ -1,156 +1,56 @@
 # AI-use disclosure
 
-## Part 1 design, October 13, 2026
+## Tools, identifiers and roles
 
-- Tool: OpenAI Codex desktop application.
-- Model: the assistant is identified as based on GPT-6 in its supplied context; the exact runtime model identifier and desktop build were not exposed in the tools used for this work. Verify against the app if available before submission.
-- Roles: interpret the student-supplied assignment and research table; discuss scope and screen flow; propose research-to-design mappings, model boundaries, data storage, and verification plans; draft project documentation.
-- Supporting tools: local file inspection/editing and read-only retrieval of prior assignment chat context to identify possible reuse patterns.
-- Sources: student-provided assignment overview and research-table image. No external clinical dataset was used.
-- Current limits: no application implementation, clinical assessment, usability study, live-model evaluation, or database verification has occurred in this project.
-- Student responsibility: review the draft, correct it where needed, understand the decisions, and record substantive changes or additional tools used.
+| Tool or model | Role and disclosure |
+| --- | --- |
+| OpenAI Codex desktop coding assistant | Interpreted supplied requirements; proposed/revised design; generated application code, tests and documentation; debugged failures; operated browser checks; inspected SQLite; produced captioned recordings and packaged deliverables. The supplied assistant context identifies a GPT-6-based agent; the exact runtime model/build was not exposed and is not invented here. |
+| OpenAI Responses API, configured alias gpt-4.1-mini | Proposed scoped SQL and generated replies from reviewed skill context and selected fictional records. Two exchanges/four calls in Part 2 and eight exchanges/16 calls in Part 3: 20 calls across those recorded evaluations. The exact returned model snapshot was not captured. |
+| demo-v1 | Deterministic mock adapter for routine tests and demonstration. It is application logic, not a live AI model. |
+| reviewed-rules-v1 | Narrow application-owned fixed replies for recognized crisis phrases and past-pause questions. No provider call, retrieval or usage reservation; not a clinical detector. |
+| Python unittest, Node node:test, FastAPI, SQLite, shell/Git | Regression checks, application execution, read-only data inspection, versioning and local packaging. |
+| Playwright 1.64.1 and Chrome 156.0.8078.80 | Fictional browser evaluation, screenshots and actual browser recordings. Native computer-use controls supplemented the background-tab check during the final review. |
+| Playwright FFmpeg and isolated imageio-ffmpeg utility | Converted/joined actual captures and added written explanatory captions. The recordings contain no spoken narration and do not establish independent human testing. |
 
-See [the curated evidence log](docs/evidence.md) for selected prompts, decisions, and a revised approach. Extend this file during Parts 2 and 3 with the application provider/model identifiers and their roles.
+No sub-agents, Figma, image generation, clinical participant evaluation, external
+conversation dataset import or model training were used. No Expedia source code
+or private conversation history was copied. Familiar architecture patterns and
+an authorized private credential configuration were reused; credentials remain
+outside source, logs and deliverables.
 
-## Part 1 finalization, October 15, 2026
+## Inputs and assistance boundaries
 
-Codex incorporated the supplied startup and Figma activity instructions, filled
-the design guidelines from the preceding discussion, added a fictional task and
-screen sketches, and revised the retrieval design to the class's two-call SQL
-RAG pattern. It organized the submission documents and checked local links,
-research-code coverage, and repository contents. Browser access to the separate
-Canvas submission page reached sign-in; no additional instructions or submission
-were verified. No Figma tools, clinical datasets, app-provider calls, or generated
-application code were used. The model identifier disclosure above remains the
-available information; no more specific version is invented.
+Inputs included the supplied assignment overview, R1–R4/D1–D6 research table,
+user-state ideation material, explicit design preferences and local project files.
+Earlier research review used official accessibility/provider documentation and
+the palette sources cited in [the design](docs/design-pipeline.md). Regional
+support details were checked through the available helpline lookup. Sources and
+assistant suggestions informed design; they are not evidence of clinical benefit.
 
-Publication used local Git commands and anonymous HTTP checks to publish the
-student-specified repository and verify report-document access. No Canvas upload
-was performed. Publication evidence is stored in docs/publication-links.json.
+Codex authored substantial code and prose, including the final explanations and
+recording captions. The [curated process log](docs/evidence.md) connects selected
+instructions to implementation changes, verification and retained tradeoffs.
+The source explanation in the process recording describes the generated pagination
+code; it is not a recording of an independently performed human explanation.
 
-## User-state ideation revision, October 15, 2026
+## Evaluation and revised approaches
 
-Codex used the newly supplied ideation activity to draft comparisons and rationale
-for explicit presentation controls, distinguish self-report/observations/inference,
-and add proposed fictional cases. It updated the design, report, and project notes.
-It did not independently read the referenced research papers or inspect/download
-questionnaires, datasets, models, or videos, and did not run participant or model
-tests. Research statements in this revision are attributed to the course activity.
+The original live outputs are preserved in [Part 2 evidence](docs/part2-live-evidence.json)
+and [Part 3 raw results](docs/part3/live-results.json). Part 2 exposed an unsupported
+pause inference. A stronger prompt was followed by repeated Part 3 tests; one pause
+answer remained ambiguous and both crisis-input replies lacked direct redirection.
+Five of eight Part 3 replies met the criteria; three motivated narrow fixed rules.
+Mocked regression tests prove those rules' application behavior, not new live-model
+success or broad safety. No further paid calls were made for final review or videos.
 
-## Backend foundation, October 20, 2026
+Another failure involved saved replies hidden by pagination. The before/after
+recordings, API IDs and boundary tests establish the correction. The final audit
+reran 54 automated tests, the production build and 18 browser scenarios. Automation
+could not hide the tab; a separate native Chrome observation verified the paused
+return state. Both observations remain recorded rather than rewriting the earlier
+inconclusive result. See [evaluation](docs/part3/evaluation.md).
 
-Codex inspected local project files/tools and authored a session API contract,
-Python/FastAPI source, SQLite persistence, and tests. No Expedia source was
-copied. Seven standard-library tests passed against temporary fictional records.
-HTTP tests were authored but not run because dependencies are absent. No provider,
-RAG, browser, Figma, or clinical testing occurred. Model identification remains
-limited to the supplied GPT-6 context. Installation approval is pending.
-
-## Backend installation and verification, October 20, 2026
-
-Following explicit student approval, Codex used pip in backend/.venv to install
-backend dependencies, recorded their resolved versions, and ran automated and
-real-process localhost checks. It corrected test SQLite cleanup and the restart
-exit-code assumption, and aligned the health OpenAPI error schema with actual
-responses. Fifteen tests passed; the affected seven API tests passed again after
-the schema correction. Local sqlite3 read-only inspection checked fictional rows
-and relationships. A browser attempt via computer-use tools returned
-ERR_BLOCKED_BY_CLIENT, so no browser result is claimed. No application provider
-or model calls, frontend code, Figma work, or clinical evaluation occurred.
-
-## Running Vue prototype, October 20, 2026
-
-Codex authored the Vue app, fixed timing controller, HTTP client, history view,
-styles, and Node built-in tests. Installed Vue/Vite/plugin dependencies only after
-explicit student approval. Used the available helpline lookup for the labeled
-U.S. support resources. Browser tools operated Chrome Guest and the Codex browser
-for fictional scenarios; local Python inspected SQLite read-only and compared
-IDs with API/UI records. Corrected focus handling and failure wording based on
-observations. No Figma, image-generation service, prior-project source copying,
-provider/model API calls, real patient data, or clinical evaluation was used.
-A screenshot and detailed observed/unverified checks are retained in docs.
-
-## Part 2 build, research and verification — October 26, 2026
-
-Codex authored the conversation/retrieval/provider/preferences code, simplified
-Vue layout/styles, tests, private setup helper and Part 2 report updates. The
-coding assistant's exact runtime model identifier remains unavailable; it is
-identified as GPT-6-based in supplied context. No subagents were used.
-
-Tools: local shell/apply_patch/Git inspection; Python unittest/SQLite read-only
-inspection; Node tests and Vite build; web research of original publications,
-W3C guidance and official OpenAI documentation; browser computer-use and screenshot
-tools; helpline lookup to reverify regional resources. Applied Sites' local-only
-workflow and OpenAI Docs guidance. No public hosting, Figma, image generation,
-new package installation, copied prior-app source, private messages or real patient
-data were used. See design-pipeline.md for citations and evidence.md for revisions.
-
-Application provider: default deterministic `demo-v1` mock logic, clearly labeled
-in UI and stored reply metadata. Prepared OpenAI Responses API with configurable
-model (setup suggestion `gpt-4.1-mini`) for scoped SQL selection and concise grounded
-answers. **No real model API calls have been made**; provider HTTP tests are mocked.
-Mock crisis branches are demonstration behavior, not a validated risk classifier.
-
-The student must review generated code, understand the SQL allowlist, request
-transactions and timer boundaries, verify a small live sample, and finalize the
-submission. Research-informed aesthetics and passing software tests do not show
-clinical effectiveness or establish a universally calming palette.
-
-
-Palette follow-up: Codex researched the student's request to replace green,
-reviewed Wilms & Oberfeld (2018) and Jonauskaite & Mohr (2025), changed CSS to
-muted blue/ivory, calculated contrast, built the frontend and inspected desktop
-and mobile in the real browser. Exact colors are design judgments, not a proven
-anxiety intervention. No new dependency, generated image or model API call.
-
-
-## Live model contribution — October 26, 2026
-
-The student approved reusing a private key locally and four paid calls. OpenAI
-Responses with configured alias `gpt-4.1-mini` performed SQL-template selection
-and answer generation for two fictional browser exchanges. The exact returned
-model snapshot was not captured. Replies and cited IDs were saved and inspected;
-see docs/part2-live-evidence.json. Only the key configuration was reused from the
-prior Expedia app, not source code or private conversation records.
-
-A live reply inferred that a completed session was not paused; that was not
-established by retrieved fields. Codex strengthened the prompt, preserved the
-original output and documented that no live retest was performed after the change.
-Four calls total; identical retries added none. Routine app mode was reset to mock.
-Earlier “no live calls” entries describe their historical checkpoints only.
-
-
-Branding/screenshots follow-up: Codex renamed the prototype Breathing Room and
-authored small inline SVG airflow/help icons in Vue, adjusted responsive header
-styles and updated the browser title. No image generator or new dependency used.
-Recaptured real interface states for Part 2 coverage; no screenshots fabricated
-and no stored live answer edited. No additional paid model calls.
-
-
-## Part 3 — November 2, 2026
-
-- **Codex coding assistant:** audited the assignment/repository, generated and
-  revised code/tests, operated local browser checks, inspected SQLite, drafted
-  documentation, created captioned recordings, and prepared the submission.
-  The exact assistant model identifier was not exposed by this session and is
-  not inferred from the app brand. No sub-agents were used.
-- **OpenAI API:** configured alias `gpt-4.1-mini`, eight fictional exchanges and
-  16 calls (SQL proposal plus answer generation), before the final fixed-rule
-  refinement. Exact provider snapshot was not recorded. Raw answers and human-
-  readable assessments are preserved, including three failing/ambiguous results.
-- **Mock/fixed modes:** `demo-v1` for routine tests; `reviewed-rules-v1` for narrow
-  application responses. Neither is represented as live AI. No further paid calls
-  were needed for screenshots, video or policy regression tests.
-- **Tools:** Python unittest, Node node:test, FastAPI/SQLite, Playwright 1.64.1,
-  installed Chrome 156.0.8078.80, shell/Git, and read-only SQLite inspection.
-  Playwright's FFmpeg and an isolated imageio-ffmpeg utility encode recordings;
-  these tools do not generate app behavior. No Figma or image generation was used.
-- **Recordings:** agent-produced screen captures of the actual browser with
-  clearly labeled written commentary, including the code explanation. They do
-  not represent the student's voice or independently establish the student's
-  understanding. The student should review both the code and recordings before
-  submitting. The report does not claim that a human peer performed the tests.
-
-The curated prompts, failures, changes and checks are summarized in
-[process evidence](docs/evidence.md) and [evaluation](docs/part3/evaluation.md).
-Credentials, private environment files and runtime databases are excluded from Git.
+All evaluation inputs are fictional. No real person in distress was recruited,
+no external support service was contacted, and no clinical effectiveness, monitoring
+or therapeutic suitability is claimed. Raw evidence is retained with its original
+wording; final prose consolidates earlier milestone notes into the completed design.

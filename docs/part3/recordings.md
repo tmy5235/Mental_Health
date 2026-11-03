@@ -2,9 +2,9 @@
 
 These are screen captures of the actual running local app, using fictional data,
 with clearly labeled written commentary. They have no spoken narration. Playback
-is at normal speed, including the full breathing sequence. They were produced by
-the coding agent; the student should review the evidence and code before submitting.
-No human participant test or student voice/understanding is claimed.
+is at normal speed, including the full breathing sequence. They were produced with coding-agent assistance, disclosed in [AI-USE.md](../../AI-USE.md).
+They demonstrate actual application behavior and a written source explanation;
+no independent human participant evaluation or spoken narration is claimed.
 
 ## Finished application — 2 minutes 12 seconds
 

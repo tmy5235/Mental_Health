@@ -1,28 +1,19 @@
-# Part 1 submission checklist
+# Part 1 decisions — final disposition
 
-Student-stated deadline: October 15, 2026. Exact time and any extra instructions
-on the separate Canvas submission page remain unverified because it redirected
-to sign-in.
+The original design is preserved in the [published Part 1 snapshot](https://github.com/tmy5235/Mental_Health/tree/f7b91254907a3eb18b22dc7d58b82a89960c63cb).
+This document records how those decisions were resolved in the final implementation.
 
-## Design package complete
+| Design commitment | Final disposition |
+| --- | --- |
+| One intact skill and fictional task | Six 4/6 cycles; immediate Start; fictional Alex; no mandatory disclosure. |
+| Screens, flow and research mapping | Implemented home/exercise/result plus optional chat/history; all R1–R4/D1–D6 mapped in the final design. |
+| Model and data responsibilities | Two-call scoped SQL RAG; separate application writes and fixed exercise/support control. |
+| Personalization and state boundaries | Explicit saved display choices; no questionnaire, click tracking or inferred state. |
+| User control and crisis access | Pause/Resume/Stop, neutral outcomes, unconditional bundled support. |
+| Timing and persistence questions | Measured visible sequence below 90s; inspected saved IDs; restart/retry checks pass. |
+| Active recovery and simplified-screen proposals | Unfinished refresh disclosed as unsaved; only display settings collapse. These scope changes are explained in the design. |
+| Evaluation and process record | 18 fictional scenarios, three cross-case checks, repeated live sample, failures/refinements, two recordings and AI disclosure. |
 
-- [x] Paced-breathing scope and fictional Alex scenario.
-- [x] Three screen sketches and main flow diagram.
-- [x] All R1–R4 / D1–D6 findings mapped to decisions and tradeoffs.
-- [x] Conversation-first alternative compared with selected start-first design.
-- [x] User-state ideation incorporated: alternatives, self-report/observation/inference distinctions, explicit presentation control, and missing/conflicting-information behavior.
-- [x] Two-call SQL RAG, application control, storage, and history plan.
-- [x] Personalization, user choice, exit, independent crisis access, and timing assumptions.
-- [x] Open implementation questions and proposed fictional checks.
-- [x] README guidelines, AGENTS, design notes, verification, handoff, AI disclosure, and revised-approach evidence.
-
-## Publication and submission
-
-- [x] Repository destination supplied and assessed version published.
-- [x] Assessed commit and accessible links inserted in report.md.
-- [x] External access checked: repository, commit, and six document links returned HTTP 200 without authentication.
-- [ ] Student reviews the final report and can explain the design.
-- [ ] Student checks any additional Canvas page instructions and uploads report.md.
-
-A working app, recording, and Figma file are not required by the supplied Part 1
-overview. The Figma activity explicitly adds no new submission/grading requirement.
+The [final design](design-pipeline.md) gives reasons and tradeoffs;
+[Part 3 coverage](part3/requirements.md) maps the final deliverables to the supplied
+assignment. Figma was an optional workflow and was not used or claimed.

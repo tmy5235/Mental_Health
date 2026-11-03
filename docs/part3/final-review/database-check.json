@@ -1,0 +1,39 @@
+{
+  "method": "Read-only SQLite inspection of isolated final-review database",
+  "integrity": "ok",
+  "foreign_key_violations": [],
+  "duplicate_request_role_pairs": [],
+  "completed_session": {
+    "id": "e38a6c1a-39bf-4368-8aad-15dad717c31e",
+    "profile_id": "fictional-alex",
+    "skill_key": "paced-breathing",
+    "skill_version": 1,
+    "started_at": "2026-11-03T04:41:29.423000+00:00",
+    "ended_at": "2026-11-03T04:42:29.426000+00:00",
+    "status": "completed",
+    "active_duration_seconds": 60.0,
+    "cycles_completed": 6,
+    "display_mode": "text",
+    "fictional": 1
+  },
+  "browser_api_session": {
+    "started_at": "2026-11-03T04:41:29.423000Z",
+    "ended_at": "2026-11-03T04:42:29.426000Z",
+    "status": "completed",
+    "active_duration_seconds": 60,
+    "cycles_completed": 6,
+    "display_mode": "text",
+    "id": "e38a6c1a-39bf-4368-8aad-15dad717c31e",
+    "profile_id": "fictional-alex",
+    "skill_key": "paced-breathing",
+    "skill_version": 1,
+    "fictional": true
+  },
+  "matching_fields": {
+    "id": true,
+    "status": true,
+    "active_duration_seconds": true,
+    "cycles_completed": true,
+    "display_mode": true
+  }
+}
