@@ -573,3 +573,20 @@ published evidence bytes matched local copies and referenced heading fragments
 were present. Results: [part2-publication-links.json](part2-publication-links.json).
 Final report/publication metadata are a documentation-only follow-up; application
 source stays at the assessed commit. Credentials and runtime database excluded.
+
+
+## Final Part 3 — November 2, 2026
+
+The authoritative final matrix is [Part 3 evaluation](part3/evaluation.md):
+54 automated tests pass (40 backend, 14 frontend); production build passes;
+18 browser scenarios yield 17 passes and one inconclusive native visibility check.
+Eight live exchanges reserve 16 calls; raw failures remain preserved and motivate
+fixed application responses. No live calls are made by browser regression tests.
+Read-only SQLite matches the final timing/fixed-reply IDs, with integrity ok,
+no foreign-key violations and no duplicate request/role pairs.
+
+Clean installation and final launch are recorded in [clean-checkout](part3/clean-checkout.md).
+Recordings include real app interactions, a real pagination failure, API evidence,
+the resulting correction and a generated-code explanation; editorial captions
+are clearly labeled. These are agent-produced demonstrations, not human participant
+or clinical evidence. [Recording guide](part3/recordings.md).

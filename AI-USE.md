@@ -125,3 +125,32 @@ authored small inline SVG airflow/help icons in Vue, adjusted responsive header
 styles and updated the browser title. No image generator or new dependency used.
 Recaptured real interface states for Part 2 coverage; no screenshots fabricated
 and no stored live answer edited. No additional paid model calls.
+
+
+## Part 3 — November 2, 2026
+
+- **Codex coding assistant:** audited the assignment/repository, generated and
+  revised code/tests, operated local browser checks, inspected SQLite, drafted
+  documentation, created captioned recordings, and prepared the submission.
+  The exact assistant model identifier was not exposed by this session and is
+  not inferred from the app brand. No sub-agents were used.
+- **OpenAI API:** configured alias `gpt-4.1-mini`, eight fictional exchanges and
+  16 calls (SQL proposal plus answer generation), before the final fixed-rule
+  refinement. Exact provider snapshot was not recorded. Raw answers and human-
+  readable assessments are preserved, including three failing/ambiguous results.
+- **Mock/fixed modes:** `demo-v1` for routine tests; `reviewed-rules-v1` for narrow
+  application responses. Neither is represented as live AI. No further paid calls
+  were needed for screenshots, video or policy regression tests.
+- **Tools:** Python unittest, Node node:test, FastAPI/SQLite, Playwright 1.64.1,
+  installed Chrome 156.0.8078.80, shell/Git, and read-only SQLite inspection.
+  Playwright's FFmpeg and an isolated imageio-ffmpeg utility encode recordings;
+  these tools do not generate app behavior. No Figma or image generation was used.
+- **Recordings:** agent-produced screen captures of the actual browser with
+  clearly labeled written commentary, including the code explanation. They do
+  not represent the student's voice or independently establish the student's
+  understanding. The student should review both the code and recordings before
+  submitting. The report does not claim that a human peer performed the tests.
+
+The curated prompts, failures, changes and checks are summarized in
+[process evidence](docs/evidence.md) and [evaluation](docs/part3/evaluation.md).
+Credentials, private environment files and runtime databases are excluded from Git.

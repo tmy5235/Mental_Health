@@ -1,0 +1,26 @@
+
+> paced-breathing-coursework@0.1.0 test
+> node --test tests/*.test.js
+
+✔ requests use relative API URLs and a bounded abort signal (12.77525ms)
+✔ failed server responses never become successful saves (0.352583ms)
+✔ successful HTTP status requires explicit matching save confirmation (0.1925ms)
+✔ a retry sends the same stable ID and frozen payload (0.2815ms)
+✔ network, timeout, and unreadable-response failures remain errors (0.357375ms)
+✔ chat retry preserves IDs and checks saved assistant confirmation (0.569125ms)
+✔ API errors preserve stable codes for failed chat recovery (0.16925ms)
+✔ six fixed cycles use four-second inhales and six-second exhales (0.4925ms)
+✔ pause freezes phase/count and excludes voluntary time (0.429584ms)
+✔ Stop freezes an early exit and ignores later ticks/resume (0.082042ms)
+✔ delayed completion callback caps active time at sixty seconds (0.770167ms)
+✔ a new start resets earlier time and pause state (0.07025ms)
+✔ terminal payload preserves pause time in timestamps, not active duration (0.077959ms)
+✔ no active session can be saved as a terminal outcome (0.197667ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 58.220375

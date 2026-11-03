@@ -1,0 +1,46 @@
+{
+  "initial": {
+    "health": {
+      "status": "ok",
+      "storage_available": true,
+      "provider_mode": "mock",
+      "provider_configured": true,
+      "live_calls_reserved": 0,
+      "live_call_limit": 50
+    },
+    "sessions": {
+      "sessions": [],
+      "limit": 20,
+      "offset": 0
+    },
+    "conversations": {
+      "conversations": [],
+      "limit": 20,
+      "offset": 0
+    }
+  },
+  "conversation": "e34e937b-81c2-4e1f-83e0-df588b6f9a3f",
+  "messageIds": [
+    "33cac130-5658-44df-836c-3babbd05dcc5",
+    "ef19c77c-fe38-4fac-8c86-9388c81d0c38"
+  ],
+  "emptyRetrieval": true,
+  "refreshPreservedIds": true,
+  "supportOpened": true,
+  "savedSessions": [
+    {
+      "started_at": "2026-11-03T04:04:09.420000Z",
+      "ended_at": "2026-11-03T04:04:09.488000Z",
+      "status": "stopped",
+      "active_duration_seconds": 0.067,
+      "cycles_completed": 0,
+      "display_mode": "text",
+      "id": "32951054-faa9-44c7-ad92-23f999fe5579",
+      "profile_id": "fictional-alex",
+      "skill_key": "paced-breathing",
+      "skill_version": 1,
+      "fictional": true
+    }
+  ],
+  "passed": true
+}

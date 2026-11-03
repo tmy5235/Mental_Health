@@ -1,65 +1,49 @@
-# Current handoff
+# Current handoff — Part 3
 
-Updated October 26, 2026 (America/New_York).
-Branch: `codex/implementation-foundation`.
-Assessed Part2 implementation: `83fb304882df74028daceacf3ea2a3ab29842181`.
-Published repository: https://github.com/tmy5235/Mental_Health.
-Final report and publication-check metadata are a documentation-only follow-up.
-Use local `report.md` for review and Canvas upload, not the provisional report
-inside the assessed implementation commit. All28report links verified anonymous
-HTTP200; evidence files compared byte-for-byte. See docs/part2-publication-links.json.
+Updated November 2, 2026 (America/New_York).
+Branch: `codex/part3-final`. Application source checkpoint:
+`9e3819006d56ae63379ceafe24ca677406d2c646`.
+Repository: https://github.com/tmy5235/Mental_Health.
 
-## Submission state
+## Completed
 
-User explicitly authorized commit/push and requested all Part2 requirements be
-checked. Supplied overview re-read; coverage confirmed for skill/model/persistence/
-timing/support/failure/exit/scope/research/AI disclosure. Exact Canvas Part2 URL
-redirects to Penn State sign-in; additional signed-in instructions/deadline remain
-unverified. Student must review and upload report.md. No Canvas submission made.
-Part3's15scenario evaluation, clean-checkout check and final/process videos remain.
+Breathing Room retains the full one-skill Vue/FastAPI/SQLite experience, optional
+model/SQL RAG, persistent conversation/session history, explicit preferences,
+Pause/Stop and independent bundled support. Added latest-page chat navigation and
+narrow fixed application replies for recognized crisis/past-pause questions.
+Fixed responses are labeled `local` / `reviewed-rules-v1`, not live AI.
 
-## Current implementation and evidence
+54 automated tests pass (40 backend, 14 frontend), production build passes.
+Eighteen browser scenarios: 17 pass, native hidden-tab check inconclusive.
+Visible exercise duration 60.321 seconds; saved wall duration 60.003 seconds,
+60 active seconds/six cycles. Read-only SQLite integrity ok, no foreign-key or
+request/role duplicate violations. Separate clean clone installs, passes tests,
+starts both services and completes browser/API persistence/support checks.
 
-Breathing Room: Vue/FastAPI/SQLite, six4/6cycles, Pause/Stop, independent bundled
-support, saved session/conversation history, explicit preferences and two-call
-SQL RAG. Blue/ivory palette, airflow logo, labeled medical-style support icon.
-Thirteen current screenshots in docs/screenshots/part2-submission mapped in report.
-Prior screenshots and log entries are historical evidence, retained unchanged.
+Eight live exchanges/16 reserved calls, configured model alias gpt-4.1-mini.
+Raw live results preserve five passing and three failing/ambiguous observations;
+these motivated fixed rules, tested with failing providers and zero further paid
+calls. Do not describe the fixed-rule tests as additional live-model success.
+No new live calls authorized/needed for routine testing or recording.
 
-Final50tests pass(36backend/14frontend), production build passes. Known Starlette
-HTTPX deprecation warning. Newest scripted complete session
-08e94b53-7233-4f00-a85c-7b4fd5822520 measured60.003s wall/60active seconds;
-stoppedf076976f-4b14-4f65-815b-a2edbf3bdf02 recorded0.483active seconds.
-History matches SQLite IDs. Backend-outage/support/retry repeated successfully;
-recovery conversation932c75c4-3fe0-4025-9842-ab8e0b544461 contains one mock pair.
+Finished-app MP4 (2:12) and process screencast (1:42) contain actual browser
+captures with written commentary and a source-code explanation. No student voice
+or human participant testing is implied. See docs/part3/recordings.md.
 
-Two real gpt-4.1-mini exchanges/four calls in conversation
- ee590ec5-eed1-474a-80fc-6424b378f5ad match SQLite/API/browser and survive restart.
-A reply correctly cited history but added unsupported “not paused.” Prompt now
-forbids pause/stop-reason inference; not live-retested. Do not claim it is fixed.
-No new paid calls authorized after the four-call demonstration.
+## Boundaries and final delivery
 
-## Runtime/private setup
+Final report/evidence publication hashes and anonymous-link checks are recorded
+in report.md and docs/part3/publication-links.json after publication. Student
+review and Canvas upload remain; no Canvas submission or hosted app deployment.
+Original Part 2 records/private config are preserved. Source branch is separate
+from the Part 2 branch; no merge/force push required.
 
-Frontend localhost5173; backend localhost8000 PID19670, execsession25786, mock.
-Recheck before use. Ignored backend/.env exists with owner-only permissions and
-approved reused Expedia key; do not overwrite or print. data/app.sqlite3 retained
-locally and ignored. Neither included in Git. DEMO_SESSION_IDpart2-local has4/50
-reserved calls. Routine/peer testing uses mock; saved live replies keep AI labels.
+Use README for commands. Browser evaluations insert fictional records: use a
+separate database with scripts/serve_mock.py. Routine mode stays mock. Preserve
+live evidence and existing databases; never print credentials.
 
-```sh
-backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000
-npm run dev --prefix frontend
-npm test --prefix frontend
-npm run build --prefix frontend
-cd backend
-.venv/bin/python -W error::ResourceWarning -m unittest discover -s tests -t . -v
-```
-
-## Limits
-
-Local fictional single-profile coursework, no clinical effectiveness claim or
-public support-service deployment. No full screen-reader/zoom/text-spacing/
-OS-motion/true-hidden-tab check or clean-checkout install. Unfinished refresh is
-unsaved; pending retries survive same-tab refresh, not tab close. No Figma/video.
-Part1 remains at f7b91254907a3eb18b22dc7d58b82a89960c63cb; no merge into its branch.
+Known limits: phrase false positives/negatives, unsupported model claims outside
+narrow rules, unsaved unfinished refresh/tab-closed retries, native hidden-tab
+behavior, full screen-reader/OS-motion/browser-zoom/other-OS checks. No clinical
+claims. See docs/part3/evaluation.md for actual results rather than historical
+plans in earlier verification sections.

@@ -192,3 +192,30 @@ Publication outcome: implementation `83fb304882df74028daceacf3ea2a3ab29842181` r
 on codex/implementation-foundation. Anonymous verification passed28report links
 and raw evidence comparisons. Finalized standalone report with immutable URLs.
 Application remains local; student review and Canvas upload are still required.
+
+
+## 2026-11-02 — Part 3 completion and revised approaches
+
+- User instruction: “Okay do what needs done and let me know if you need anything,”
+  following an audit of Part 3 gaps. Worked on an isolated branch to preserve Part 2.
+- Fresh dependency installation and baseline tests established the existing state.
+  A sandboxed install stalled; the duplicate ended and the locked install was
+  restored. This environment issue is separate from application failures.
+- A 52-message fictional chat exposed hidden new replies after Send. The API
+  contained 54 messages while the newest ID was absent from the rendered page.
+  Corrected latest-page navigation, retained manual pagination, and added exact
+  boundary regression tests. Before/after video and JSON are in `docs/part3/`.
+- Repeated four live inputs twice, bounded to 16 calls using the existing private
+  key in memory only. Stored raw replies showed ambiguous missing-data wording
+  and generic crisis responses. The new narrow application reply policy handles
+  recognized cases before model use, accurately labeled and saved. Tests with a
+  failing provider establish bypass/zero usage; they are not live retests.
+- Eighteen fictional browser scenarios cover ordinary use, interruptions, failure,
+  saved state, controls, and history. Native visibility could not be established
+  by automation and is reported inconclusive, not converted into a synthetic pass.
+- Recorded the full exercise at normal speed, saved live history in current mock
+  mode, support/exit controls, failed requests and recovery. No external helpline
+  was contacted. Regional content rechecked through the hotline tool.
+- Kept raw fictional evidence and redacted credentials/private configuration.
+  The final README is checked from a separate clean clone. Publication and exact
+  submitted hashes are recorded in report.md/handoff after verification.

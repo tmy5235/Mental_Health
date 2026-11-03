@@ -1,0 +1,62 @@
+[
+  {
+    "seconds": 0.1089658330000001,
+    "title": "1 · Purpose and choice",
+    "text": "Breathing Room is a local coursework prototype tested only with fictional scenarios. No required chat or questionnaire. The user chooses when to start, stop, or change display settings."
+  },
+  {
+    "seconds": 6.195035,
+    "title": "2 · Explicit personalization",
+    "text": "Display choices are saved in SQLite and remain changeable. We remember a chosen presentation; we do not infer distress from clicks or completed sessions."
+  },
+  {
+    "seconds": 12.247547208,
+    "title": "3 · Full exercise — real time",
+    "text": "Six cycles: inhale for four counts, exhale for six. Application code controls the pacing, Pause and Stop. This recording keeps the full one-minute sequence at normal speed."
+  },
+  {
+    "seconds": 72.72410529199999,
+    "title": "4 · Completion and persistence",
+    "text": "The completed session shows 60 active seconds and six cycles. Browser timing and SQLite/API comparisons are recorded separately in the evaluation evidence."
+  },
+  {
+    "seconds": 78.825621625,
+    "title": "5 · Useful saved history",
+    "text": "History shows factual duration, outcome and display choice, with record IDs for verification. Activity counts do not establish emotional improvement."
+  },
+  {
+    "seconds": 84.90902625,
+    "title": "6 · Independent support and exit",
+    "text": "Support information is bundled with the frontend. Opening it pauses the exercise. It works without a model response or classifier decision. No external service is contacted in this demo."
+  },
+  {
+    "seconds": 90.929523333,
+    "title": "7 · User control",
+    "text": "Returning leaves the exercise paused. Resume requires an explicit choice. Stop remains available and records a neutral Stopped outcome."
+  },
+  {
+    "seconds": 95.05284429199999,
+    "title": "8 · Saved live-model contribution",
+    "text": "This is an actual saved gpt-4.1-mini reply from the bounded live evaluation. The current server is in mock mode; replaying saved history makes no paid calls. AI labels stay attached to actual AI replies."
+  },
+  {
+    "seconds": 104.165748917,
+    "title": "9 · Refined model boundary",
+    "text": "Repeated live testing exposed ambiguous pause-history claims. Because pause events are not recorded, this recognized question gets a fixed, accurately labeled app reply. Other wording can still escape the narrow rule."
+  },
+  {
+    "seconds": 112.282426083,
+    "title": "10 · Failure is visible",
+    "text": "Browser test injection blocks API requests. The interface does not invent a saved reply. It retains the pending request for retry."
+  },
+  {
+    "seconds": 118.310932958,
+    "title": "11 · Support survives failure",
+    "text": "The support panel still opens while API requests fail. This proves local access to the information; external services require their own connection."
+  },
+  {
+    "seconds": 124.399939625,
+    "title": "12 · Recovery and limits",
+    "text": "Retry saves one exchange under the original request ID. The final report distinguishes mock, fixed and live evidence, records the model surprise, and lists untested limits. This prototype is not offered as a support service."
+  }
+]

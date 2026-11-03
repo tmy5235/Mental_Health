@@ -1,0 +1,47 @@
+<clean-checkout>/backend/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_completed_session_and_timezone_normalization (tests.test_api.ApiTests.test_completed_session_and_timezone_normalization) ... ok
+test_conflicting_retry_has_consistent_error (tests.test_api.ApiTests.test_conflicting_retry_has_consistent_error) ... ok
+test_health_and_empty_history (tests.test_api.ApiTests.test_health_and_empty_history) ... ok
+test_invalid_requests_do_not_write (tests.test_api.ApiTests.test_invalid_requests_do_not_write) ... ok
+test_save_retry_and_restart_match_sqlite (tests.test_api.ApiTests.test_save_retry_and_restart_match_sqlite) ... ok
+test_unavailable_database_does_not_claim_save (tests.test_api.ApiTests.test_unavailable_database_does_not_claim_save) ... ok
+test_url_and_pagination_validation (tests.test_api.ApiTests.test_url_and_pagination_validation) ... ok
+test_both_provider_failures_preserve_user_and_retry (tests.test_chat.ChatTests.test_both_provider_failures_preserve_user_and_retry) ... ok
+test_conflicting_retry_and_validation (tests.test_chat.ChatTests.test_conflicting_retry_and_validation) ... ok
+test_conversation_message_order_and_pagination (tests.test_chat.ChatTests.test_conversation_message_order_and_pagination) ... ok
+test_crisis_and_off_topic_mock_do_not_claim_clinical_help (tests.test_chat.ChatTests.test_crisis_and_off_topic_mock_do_not_claim_clinical_help) ... ok
+test_empty_retrieval_is_honest_and_saved (tests.test_chat.ChatTests.test_empty_retrieval_is_honest_and_saved) ... ok
+test_failed_reply_save_never_returns_saved_or_invents_reply (tests.test_chat.ChatTests.test_failed_reply_save_never_returns_saved_or_invents_reply) ... ok
+test_initial_save_failure_makes_no_provider_call (tests.test_chat.ChatTests.test_initial_save_failure_makes_no_provider_call) ... ok
+test_latest_history_page_and_total_preserve_manual_pagination (tests.test_chat.ChatTests.test_latest_history_page_and_total_preserve_manual_pagination) ... ok
+test_missing_live_configuration_no_calls_and_no_secret_in_response (tests.test_chat.ChatTests.test_missing_live_configuration_no_calls_and_no_secret_in_response) ... ok
+test_pending_lease_rejects_duplicate_and_expired_retry_preserves_user (tests.test_chat.ChatTests.test_pending_lease_rejects_duplicate_and_expired_retry_preserves_user) ... ok
+test_persistent_budget_fallback_caps_two_call_exchanges (tests.test_chat.ChatTests.test_persistent_budget_fallback_caps_two_call_exchanges) ... ok
+test_preferences_round_trip_and_reset (tests.test_chat.ChatTests.test_preferences_round_trip_and_reset) ... ok
+test_rejected_write_query_does_not_run_second_call_or_change_sessions (tests.test_chat.ChatTests.test_rejected_write_query_does_not_run_second_call_or_change_sessions) ... ok
+test_rejects_invented_citations (tests.test_chat.ChatTests.test_rejects_invented_citations) ... ok
+test_retrieval_failure_distinct_from_empty (tests.test_chat.ChatTests.test_retrieval_failure_distinct_from_empty) ... ok
+test_selected_records_ids_and_restart_no_duplicate (tests.test_chat.ChatTests.test_selected_records_ids_and_restart_no_duplicate) ... ok
+test_sql_rejects_scope_changes_functions_comments_and_multiple_statements (tests.test_chat.ChatTests.test_sql_rejects_scope_changes_functions_comments_and_multiple_statements) ... ok
+test_sql_scoped_to_current_conversation_and_demo_profile (tests.test_chat.ChatTests.test_sql_scoped_to_current_conversation_and_demo_profile) ... ok
+test_storage_unavailable_and_unknown_conversation (tests.test_chat.ChatTests.test_storage_unavailable_and_unknown_conversation) ... ok
+test_env_loader_is_explicit_and_never_evaluates_shell (tests.test_chat.ProviderTests.test_env_loader_is_explicit_and_never_evaluates_shell) ... ok
+test_http_timeout_malformed_refusal_incomplete_and_oversize_fail (tests.test_chat.ProviderTests.test_http_timeout_malformed_refusal_incomplete_and_oversize_fail) ... ok
+test_wire_schema_uses_bounded_structured_output_no_secrets_in_input (tests.test_chat.ProviderTests.test_wire_schema_uses_bounded_structured_output_no_secrets_in_input) ... ok
+test_saved_records_survive_real_server_restart_without_duplicates (tests.test_live_server.LiveServerTests.test_saved_records_survive_real_server_restart_without_duplicates) ... ok
+test_crisis_and_pause_questions_bypass_failed_provider_and_replay_once (tests.test_reply_policy.ReplyPolicyTests.test_crisis_and_pause_questions_bypass_failed_provider_and_replay_once) ... ok
+test_documented_phrase_limits_do_not_claim_detection (tests.test_reply_policy.ReplyPolicyTests.test_documented_phrase_limits_do_not_claim_detection) ... ok
+test_reviewed_reply_needs_no_live_configuration_or_budget (tests.test_reply_policy.ReplyPolicyTests.test_reviewed_reply_needs_no_live_configuration_or_budget) ... ok
+test_concurrent_identical_retries_create_one_row (tests.test_repository.RepositoryTests.test_concurrent_identical_retries_create_one_row) ... ok
+test_conflict_preserves_original (tests.test_repository.RepositoryTests.test_conflict_preserves_original) ... ok
+test_default_database_is_project_relative (tests.test_repository.RepositoryTests.test_default_database_is_project_relative) ... ok
+test_failed_transaction_leaves_no_session_or_profile (tests.test_repository.RepositoryTests.test_failed_transaction_leaves_no_session_or_profile) ... ok
+test_history_has_deterministic_order_and_pagination (tests.test_repository.RepositoryTests.test_history_has_deterministic_order_and_pagination) ... ok
+test_retry_and_reopen_preserve_one_record (tests.test_repository.RepositoryTests.test_retry_and_reopen_preserve_one_record) ... ok
+test_startup_is_empty_and_does_not_seed (tests.test_repository.RepositoryTests.test_startup_is_empty_and_does_not_seed) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 1.626s
+
+OK

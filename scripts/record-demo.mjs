@@ -28,7 +28,13 @@ await caption('2 · Explicit personalization', 'Display choices are saved in SQL
 await page.getByRole('button', { name: 'Show fewer options' }).click()
 await page.getByRole('button', { name: /Start breathing/ }).click()
 await caption('3 · Full exercise — real time', 'Six cycles: inhale for four counts, exhale for six. Application code controls the pacing, Pause and Stop. This recording keeps the full one-minute sequence at normal speed.', 6)
-await page.getByRole('heading', { name: 'Finished.', exact: true }).waitFor({ timeout: 70000 })
+try {
+  await page.getByRole('heading', { name: 'Finished.', exact: true }).waitFor({ timeout: 70000 })
+} catch (error) {
+  console.log(await page.evaluate(() => ({ hidden: document.hidden, body: document.body.innerText })))
+  await page.screenshot({ path: new URL('demo-recording-failure.png', root).pathname })
+  await context.close(); await browser.close(); throw error
+}
 await page.getByText('Saved on this computer.', { exact: true }).waitFor()
 await caption('4 · Completion and persistence', 'The completed session shows 60 active seconds and six cycles. Browser timing and SQLite/API comparisons are recorded separately in the evaluation evidence.')
 await page.getByRole('button', { name: 'View history', exact: true }).click()

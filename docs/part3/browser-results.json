@@ -1,0 +1,283 @@
+{
+  "recordedAt": "2026-11-03T03:46:30.083Z",
+  "browser": "156.0.8078.80",
+  "results": [
+    {
+      "id": "S01",
+      "name": "Complete one skill without setup",
+      "expected": "Six 4/6 cycles; visible finish within 90 seconds; one saved completed record.",
+      "observed": {
+        "visibleDuration": 60.320704208,
+        "startClickToInstructionMs": 49.69183399999997,
+        "row": {
+          "started_at": "2026-11-03T03:45:11.184000Z",
+          "ended_at": "2026-11-03T03:46:11.187000Z",
+          "status": "completed",
+          "active_duration_seconds": 60,
+          "cycles_completed": 6,
+          "display_mode": "text",
+          "id": "b9a3945f-9395-497c-ab64-815f235caf59",
+          "profile_id": "fictional-alex",
+          "skill_key": "paced-breathing",
+          "skill_version": 1,
+          "fictional": true
+        },
+        "assumptions": "No required typing, no voluntary pauses or support visits; includes UI scheduling delay."
+      },
+      "entryMs": 78.05479200000002,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S02",
+      "name": "Pause during exhale and stop",
+      "expected": "Pause preserves count; resume works; stopping saves a stopped record.",
+      "observed": {
+        "pausedCount": "6",
+        "outcome": "Your session\n\nStopped.\n\n4.4 seconds · 0 / 6 cycles\n\nSaved on this computer.\n\nBack to breathing\nView history"
+      },
+      "entryMs": 72.03954099999828,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S03",
+      "name": "Support interrupts exercise",
+      "expected": "Support opens independently, pauses exercise, returns paused, and allows stopping.",
+      "observed": "Support paused; Return did not resume; Stop exercise exited.",
+      "entryMs": 58.59237500000745,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S04",
+      "name": "Backend outage and session retry",
+      "expected": "Exercise and support work without API; failed save is honest; retry saves one row.",
+      "observed": {
+        "stopLatencyMs": 70.64162499998929,
+        "savedId": "aae607ed-f2f5-4b52-9eae-f144a91ba644",
+        "count": 1
+      },
+      "entryMs": 57.95200000000477,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S05",
+      "name": "Failed chat request, support and retry",
+      "expected": "Support survives request failure; same request retries once without duplicate messages.",
+      "observed": {
+        "request": "9260c62c-9594-4ac6-a04f-c83cb98b14b8",
+        "messageIds": [
+          "cb11cce7-5e5b-4f8b-b46b-427121954dad",
+          "7e23d490-5c43-4758-b1d0-a3b78f79d1d7"
+        ],
+        "retainedAcrossRefresh": true
+      },
+      "entryMs": 60.59575000000768,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S06",
+      "name": "Refresh unfinished exercise",
+      "expected": "Return home with no fabricated completed or stopped record; limitation disclosed.",
+      "observed": {
+        "before": 36,
+        "after": 36,
+        "decision": "Explicit Stop/finish records only; unfinished refresh is disclosed and unsaved."
+      },
+      "entryMs": 57.595916999998735,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S07",
+      "name": "Preferences restore and reset",
+      "expected": "Explicit mode/text choices persist across reload and can reset without blocking Start.",
+      "observed": "Motion/larger restored; reset gave still-text pacing and retained immediate Start.",
+      "entryMs": 58.90899999999965,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S08",
+      "name": "Narrow layout and larger text",
+      "expected": "Home, chat, history, support and exercise remain within a 320px viewport.",
+      "observed": [
+        {
+          "label": "home",
+          "client": 320,
+          "scroll": 320
+        },
+        {
+          "label": "chat",
+          "client": 320,
+          "scroll": 320
+        },
+        {
+          "label": "history",
+          "client": 320,
+          "scroll": 320
+        },
+        {
+          "label": "exercise",
+          "client": 320,
+          "scroll": 320
+        }
+      ],
+      "entryMs": 55.878083000003244,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S09",
+      "name": "Reduced motion preference",
+      "expected": "Browser reduced-motion setting overrides a saved moving-circle default on entry.",
+      "observed": "Chromium emulated prefers-reduced-motion: reduce selected text pacing; not an OS settings-panel test.",
+      "entryMs": 63.835707999998704,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S10",
+      "name": "Keyboard controls and dialog focus",
+      "expected": "Keyboard activates Pause/Resume; Escape closes support and restores focus.",
+      "observed": "Enter paused/resumed/stopped; Escape restored support-button focus. Screen-reader speech not evaluated.",
+      "entryMs": 56.82087500000489,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S11",
+      "name": "Session history pagination matches API",
+      "expected": "Older/Newer pages show distinct saved IDs in API order.",
+      "observed": {
+        "first": [
+          "996628ca-c280-40aa-9086-d5e09e1e7790",
+          "df0d83e9-6eb4-4116-a18d-15160f755647",
+          "019fcaf0-9937-417c-b2d3-7cc9f0348d0b",
+          "159e35ee-5112-4fdb-b3ea-072cc1cbdd0c",
+          "aae607ed-f2f5-4b52-9eae-f144a91ba644",
+          "7d6fdf6a-9cd1-49d5-8346-447667fb9b91",
+          "4a3c6ad6-9af6-45b1-af41-b2d75b3a0115",
+          "b9a3945f-9395-497c-ab64-815f235caf59",
+          "de0d11a6-0dca-4720-b22c-ff188a4845ca",
+          "ca475aac-5bfd-48a6-8c7a-c4352bc0a0ce",
+          "ede96556-f1ca-445e-bdc3-56e926992a1a",
+          "098c4dc9-f0a0-49ff-8d2a-60005b98426a",
+          "4721fb74-44fd-423c-997a-9ff62aece05f",
+          "b5a7879d-a852-42ec-856f-0e6cd80bcbd2",
+          "3c01df04-8ffb-4fae-8e75-4f2672773e34",
+          "69047428-1e3a-4051-b460-0f0b63f8f7d7",
+          "f2120475-deec-447a-b8de-9aabcc300fa8",
+          "33048477-2fd6-4d91-abf2-ec6eabd5f4a8",
+          "b48199a9-122a-47ce-93de-ccbd8daf492f",
+          "3853cb70-5ff5-4744-af2e-b9a2399804ed"
+        ],
+        "second": [
+          "ca78f412-b5f0-4edf-8fdb-1fd69026f181",
+          "6422e9d3-c5ca-486d-952a-c3caa7ee559b",
+          "aa73d046-acb5-4ef2-bba9-f079e762a68e",
+          "3692825d-bcbe-4360-a94a-2b21a352f3d0",
+          "d873ac5c-5392-44b9-b56f-25dd46a969e6",
+          "a6d03b0a-6602-4014-b3b3-54dae28625ea",
+          "fccc1670-0cf7-4e10-84bc-130c10e5c4de",
+          "e964b5c8-6ead-4fe1-8664-af9b257e571e",
+          "f33f37dc-26ea-4bc6-8cad-0541646abae6",
+          "db28b593-93b3-42b7-9331-a8ed284c2af3",
+          "fb33bf17-5f83-4ce3-8009-0962bde919ff",
+          "788651f7-c091-4e5e-b739-38f47b3d0486",
+          "c8a7c8c7-f194-463a-8770-f5b5bb225030",
+          "5a50ec83-0706-47d7-97ee-a0d646a6b788",
+          "13366176-1482-433b-95b5-ef754e436369",
+          "0eca6a95-6d0a-4c39-b7fe-a8d035f14b51",
+          "92c1daba-0772-4d4a-819f-9aac46ac2ea3",
+          "1a03ccda-6668-46b1-8c7a-7af5d6d0df50",
+          "5ea6e9b7-b30b-4d3c-b32c-4b2a5bb0366d",
+          "1af86d7e-1963-48b6-8fb0-9d1c46effac6"
+        ]
+      },
+      "entryMs": 57.87750000000233,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S12",
+      "name": "Long chat shows newest reply after send",
+      "expected": "Sending from the first page reveals the new reply; earlier messages remain accessible.",
+      "observed": {
+        "total": 54,
+        "latestId": "757ec64e-117a-4db2-a6bc-85864dc8a335",
+        "latestVisible": true
+      },
+      "entryMs": 57.82466700000805,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S13",
+      "name": "Fictional crisis-related input",
+      "expected": "Mock redirects to independent support without claiming monitoring or therapy.",
+      "observed": "This coursework app cannot provide crisis care. Open Crisis support for external help. No one monitors this app.",
+      "entryMs": 60.02262500001234,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S14",
+      "name": "Out-of-scope diagnosis request",
+      "expected": "Mock explains scope; exercise remains available and unchanged.",
+      "observed": "This demo covers the breathing exercise and saved activity. It cannot assess feelings, diagnose, or provide therapy.",
+      "entryMs": 54.84191600000486,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S15",
+      "name": "Background-tab interruption",
+      "expected": "Real tab visibility change pauses exercise; returning requires explicit Resume.",
+      "observed": "Error: INCONCLUSIVE: browser automation did not actually hide the page; native tab switching remains unverified. No synthetic event counted as evidence.",
+      "browserErrors": [],
+      "mode": "mock",
+      "status": "INCONCLUSIVE"
+    },
+    {
+      "id": "S16",
+      "name": "Text spacing override",
+      "expected": "Increased line/letter/word spacing leaves controls usable without page overflow.",
+      "observed": {
+        "client": 390,
+        "scroll": 390
+      },
+      "entryMs": 62.302999999999884,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S17",
+      "name": "Unknown pause history uses fixed reply",
+      "expected": "Past pause history is explicitly unknown; fixed guidance is labeled and saved with no invented citations.",
+      "observed": {
+        "messageId": "54794db9-d726-4eba-8e2b-7fc3cf126d44",
+        "content": "Saved session records do not include pause events, so this app cannot tell whether a past session was paused. Completion and active duration do not establish an uninterrupted session.",
+        "provider": "local"
+      },
+      "entryMs": 60.558417000007466,
+      "mode": "mock",
+      "status": "PASS"
+    },
+    {
+      "id": "S18",
+      "name": "Model request pending while leaving chat",
+      "expected": "An unresolved model request does not block starting/stopping the exercise or opening support.",
+      "observed": {
+        "stopLatencyMs": 68.86520799998834,
+        "requestStillPendingAtExit": true
+      },
+      "entryMs": 57.99195900000632,
+      "mode": "mock",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,4 +1,51 @@
-# Part 1 design: paced breathing
+# Design decisions: paced breathing
+
+## Final Part 3 decisions — November 2, 2026
+
+This section supersedes historical planned/unverified statements below where the
+final evidence explicitly resolves them. The original Part 1 alternatives remain
+as a record of design reasoning, not a second current implementation contract.
+
+The one-skill, immediate-Start scope remains. R1/D2 support six fixed 4/6 cycles;
+R3/R4 support voluntary Pause/Stop and optional chat. D1/D3/D5 favor explicit saved
+mode, text size and settings disclosure over inferred distress or mandatory setup.
+The gain is less repeated configuration and disclosure; the cost is limited
+personalization and no automatic recognition of need. Choice/reset remain visible.
+R2/D4 retain bundled support independent of model, API and detection outcomes.
+D6 supports brief neutral language, still text by default, and optional motion.
+
+Implementation/testing changed two decisions:
+
+1. **Model boundary:** the Part 2 prompt refinement did not reliably prevent ambiguous
+   pause claims or produce direct crisis redirection across repeated live cases.
+   The final controller uses narrow fixed replies for recognized phrases before
+   model access, labeled `local` / `reviewed-rules-v1`. This gains deterministic
+   wording for those cases, gives up conversational flexibility, and can match
+   negated/quoted text or miss indirect wording. It is not a distress detector.
+   Unknown past pause events are not inferred from completion or timestamps.
+2. **History presentation:** a long chat could save a reply successfully while
+   leaving it offscreen. `GET /api/conversations/{id}` now returns `total` and
+   accepts `latest=true`; default offset pagination remains compatible. Opening
+   a chat or sending requests the latest page; manual Earlier/Later controls
+   remain. `offset = max(0, (total - 1) // limit) * limit` handles exact page
+   boundaries without selecting an empty page. No persistence schema migration
+   was required; provider_mode/retrieval_status storage already accepted text.
+
+Saved records remain explicit session outcomes/durations/display, ordered actual
+messages, request state, and preferences. Fixed replies have no source citations
+and `not_requested` retrieval status; they are never labeled as live AI.
+Model-generated ordinary replies still use read-only scoped SQL and reviewed skill
+context. The model cannot change controls, sequence, preferences, or write data.
+
+Retained limits: unfinished refresh discards the exercise (disclosed before Start),
+closing a tab can lose pending retries, and there is no account/history-deletion
+feature. Adding recovery records or a new skill was considered unnecessary for
+this milestone: it would change schema/interaction scope while the documented
+single-skill experience satisfies the assignment. No forced completion or exit.
+
+[Final evaluation](part3/evaluation.md) records expected/observed results, timing,
+failed approaches, live variation, and unverified native visibility/accessibility
+checks. The prototype remains localhost-only and for fictional coursework use.
 
 ## Part 2 implementation contract — October 26, 2026
 

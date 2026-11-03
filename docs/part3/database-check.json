@@ -1,0 +1,39 @@
+{
+  "method": "Python sqlite3 read-only URI; existing records retained",
+  "integrity": "ok",
+  "foreign_keys": [],
+  "duplicates": [],
+  "timed_session": {
+    "id": "b9a3945f-9395-497c-ab64-815f235caf59",
+    "profile_id": "fictional-alex",
+    "skill_key": "paced-breathing",
+    "skill_version": 1,
+    "started_at": "2026-11-03T03:45:11.184000+00:00",
+    "ended_at": "2026-11-03T03:46:11.187000+00:00",
+    "status": "completed",
+    "active_duration_seconds": 60.0,
+    "cycles_completed": 6,
+    "display_mode": "text",
+    "fictional": 1
+  },
+  "fixed_reply": {
+    "sequence": 234,
+    "id": "54794db9-d726-4eba-8e2b-7fc3cf126d44",
+    "conversation_id": "81502eae-b1e9-417e-9261-7a97ebc05e97",
+    "profile_id": "fictional-alex",
+    "request_id": "a16f1203-e78d-4788-889c-8e40da7891b3",
+    "role": "assistant",
+    "content": "Saved session records do not include pause events, so this app cannot tell whether a past session was paused. Completion and active duration do not establish an uninterrupted session.",
+    "created_at": "2026-11-03T03:46:28.939247+00:00",
+    "record_ids": "[]",
+    "retrieval_status": "not_requested",
+    "provider_mode": "local",
+    "model": "reviewed-rules-v1",
+    "status": "completed"
+  },
+  "counts": {
+    "sessions": 65,
+    "conversations": 14,
+    "messages": 288
+  }
+}

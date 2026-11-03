@@ -228,20 +228,21 @@ approaches for the project's AI-use disclosure.
 
 ## Current project context
 
-The Part 1 design is maintained in `docs/design-pipeline.md`; `docs/design.md`
-links to it for compatibility. Read `docs/verification.md`, `docs/evidence.md`,
-and `handoffs/current.md` for current claims and limits. The README design
-fields are completed, and the SQL RAG requirement is reconciled across documents.
-Vue, FastAPI and SQLite now implement exercise/history, conversations, scoped
-SQL RAG and explicit preferences. Fifty automated tests pass. Two real OpenAI
-exchanges were saved and inspected (four calls); routine mode is mock. One live
-reply inferred pause history unsupported by retrieved fields; a prompt refinement
-has not been live-retested. Read current verification/evidence for exact limits.
-Continue the chosen paced-breathing scope unless the
-student requests a change. Figma remains an optional later design method and is
-not a prerequisite for the Part 1 submission.
+Part 3 is implemented on `codex/part3-final`. Read `docs/part3/evaluation.md`,
+`docs/part3/clean-checkout.md`, and `handoffs/current.md` for exact evidence.
+The core remains Vue/FastAPI/SQLite, one paced-breathing skill, optional SQL RAG,
+saved history, explicit preferences and unconditional bundled support.
 
-Keep planned work distinct from verified behavior. Update the report, evidence,
-and AI disclosure as work occurs. Peer testing defaults to mocks; if live calls
-are needed, enforce at most 50 model calls per session, counting both RAG stages,
-then return to mocks. Do not infer emotional state or effectiveness from history.
+Final additions: latest-page chat navigation after Send/open, and application-owned
+fixed replies for a narrow set of crisis phrases and past-pause questions. These
+are labeled App replies, do not call a provider, and are not a clinical detector.
+Preserve the documented false-negative/false-positive limitations and independent
+support access. Preserve historical live replies; do not edit evidence to erase
+failures. 54 automated tests pass; 17 of 18 browser scenarios pass, with native
+background-tab behavior inconclusive. The 16-call Part 3 live evaluation is finished;
+routine/peer work stays mocked. Do not infer emotional state from saved activity.
+
+Browser evaluation inserts fictional fixtures: use `scripts/serve_mock.py` with a
+separate database. Keep actual working records and credentials intact. New claims
+require new observations; recordings and raw evidence have explicit mock/local/live
+labels. Figma, additional skills, accounts and public hosting are outside scope.

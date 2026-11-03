@@ -160,7 +160,7 @@ await scenario('S07', 'Preferences restore and reset', 'Explicit mode/text choic
   await page.getByRole('button', { name: 'Stop', exact: true }).click()
   return 'Motion/larger restored; reset gave still-text pacing and retained immediate Start.'
 })
-await scenario('S08', 'Narrow layout and larger text', 'Home, chat, history, support and exercise remain within a 320px viewport.', async page => {
+await scenario('S08', 'Narrow layout', 'Home, chat, history, support and exercise remain within a 320px viewport.', async page => {
   const widths = []
   const inspect = async label => {
     const size = await page.evaluate(() => ({ client: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth }))

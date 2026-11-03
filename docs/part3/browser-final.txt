@@ -1,0 +1,19 @@
+S01 PASS: Complete one skill without setup 
+S02 PASS: Pause during exhale and stop 
+S03 PASS: Support interrupts exercise 
+S04 PASS: Backend outage and session retry 
+S05 PASS: Failed chat request, support and retry 
+S06 PASS: Refresh unfinished exercise 
+S07 PASS: Preferences restore and reset 
+S08 PASS: Narrow layout and larger text 
+S09 PASS: Reduced motion preference 
+S10 PASS: Keyboard controls and dialog focus 
+S11 PASS: Session history pagination matches API 
+S12 PASS: Long chat shows newest reply after send 
+S13 PASS: Fictional crisis-related input 
+S14 PASS: Out-of-scope diagnosis request 
+S15 INCONCLUSIVE: Background-tab interruption 
+S16 PASS: Text spacing override 
+S17 PASS: Unknown pause history uses fixed reply 
+S18 PASS: Model request pending while leaving chat 
+17/18 browser scenarios passed

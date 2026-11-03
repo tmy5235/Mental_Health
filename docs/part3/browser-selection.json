@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-03T03:44:14.319Z",
+  "browser": "156.0.8078.80",
+  "results": [
+    {
+      "id": "S15",
+      "name": "Background-tab interruption",
+      "expected": "Real tab visibility change pauses exercise; returning requires explicit Resume.",
+      "observed": "AssertionError [ERR_ASSERTION]: Must actually hide the tab; synthetic events do not establish this check\n\nfalse !== true\n",
+      "browserErrors": [],
+      "mode": "mock",
+      "status": "FAIL"
+    }
+  ]
+}
